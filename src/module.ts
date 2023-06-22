@@ -1,4 +1,6 @@
 import {addComponentsDir, addPlugin, createResolver, defineNuxtModule} from "@nuxt/kit"
+import * as fs from "fs"
+import jsYaml from "js-yaml"
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {
@@ -21,11 +23,19 @@ export default defineNuxtModule<ModuleOptions>({
     if (options.injectVuetify) {
       addPlugin(resolver.resolve("./runtime/plugins/vuetify"))
     }
-    addPlugin(resolver.resolve("./runtime/plugins/locales"))
 
     await addComponentsDir({
       path: resolver.resolve("./runtime/components"),
       watch: true,
     })
+  },
+  hooks: {
+    async "i18n:extend-messages"(messages) {
+      const resolver = createResolver(import.meta.url)
+      messages.push({
+        ja: jsYaml.load(fs.readFileSync(resolver.resolve("./runtime/locales/ja.yaml"), "utf8")) as any,
+        en: jsYaml.load(fs.readFileSync(resolver.resolve("./runtime/locales/en.yaml"), "utf8")) as any,
+      })
+    },
   },
 })
