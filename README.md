@@ -1,16 +1,14 @@
 # mhy-material-components
 
-Common components to [genshin-material][genshin-material-repo-url] and [hsr-material][hsr-material-repo-url].
-
-**Not intended for use by external products**
+Components common to [genshin-material][genshin-material-repo-url] and [hsr-material][hsr-material-repo-url].
 
 ## Installation
 
 1. Add dependency to your project
 
     ```bash
-    # In preparation
-   ```
+    yarn add mhy-material-components@https://github.com/chika3742/mhy-material-components#main
+    ```
 
 2. Add `mhy-material-components` to the `modules` section of `nuxt.config.ts`
 
