@@ -1,10 +1,9 @@
 {
   "name": "mhy-material-components",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Common components for genshin-material / hsr-material",
   "license": "MIT",
   "type": "module",
-  "private": true,
   "exports": {
     ".": {
       "types": "./dist/types.d.ts",
@@ -17,6 +16,14 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chika3742/mhy-material-components"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  },
   "scripts": {
     "prepack": "nuxt-module-build",
     "dev": "nuxi dev playground",
