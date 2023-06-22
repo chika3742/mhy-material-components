@@ -1,5 +1,9 @@
 export default defineNuxtConfig({
-  modules: ['../src/module'],
+  modules: ["../src/module"],
   mhyMaterialComponents: {},
-  devtools: { enabled: true }
+  // @ts-ignore
+  build: {
+    transpile: ["vuetify"],
+  },
+  devtools: {enabled: true},
 })

@@ -1,7 +1,9 @@
 import {addComponentsDir, addPlugin, createResolver, defineNuxtModule} from "@nuxt/kit"
 
 // Module options TypeScript interface definition
-export interface ModuleOptions {}
+export interface ModuleOptions {
+  injectVuetify?: boolean
+}
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
@@ -9,12 +11,16 @@ export default defineNuxtModule<ModuleOptions>({
     configKey: "mhyMaterialComponents",
   },
   // Default configuration options of the Nuxt module
-  defaults: {},
+  defaults: {
+    injectVuetify: true,
+  },
   setup(options, nuxt) {
     const resolver = createResolver(import.meta.url)
 
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
-    addPlugin(resolver.resolve("./runtime/plugin"))
+    if (options.injectVuetify) {
+      addPlugin(resolver.resolve("./runtime/plugin"))
+    }
 
     addComponentsDir({
       path: resolver.resolve("./runtime/components"),
