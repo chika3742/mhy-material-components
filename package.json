@@ -26,7 +26,7 @@
     "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest watch",
-    "postinstall": "cd playground && yarn install"
+    "postinstall": "yarn dev:prepare"
   },
   "dependencies": {
     "@nuxt/kit": "^3.5.2"
