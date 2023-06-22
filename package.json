@@ -32,7 +32,8 @@
     "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
     "lint": "eslint .",
     "test": "vitest run",
-    "test:watch": "vitest watch"
+    "test:watch": "vitest watch",
+    "postinstall": "yarn --cwd ./playground install"
   },
   "dependencies": {
     "@nuxt/kit": "^3.5.2"
