@@ -1,5 +1,6 @@
 {
   "name": "mhy-material-components",
+  "version": "1.0.0",
   "description": "Common components for genshin-material / hsr-material",
   "license": "MIT",
   "type": "module",
