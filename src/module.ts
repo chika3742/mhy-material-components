@@ -14,7 +14,7 @@ export default defineNuxtModule<ModuleOptions>({
   defaults: {
     injectVuetify: true,
   },
-  setup(options, nuxt) {
+  async setup(options, nuxt) {
     const resolver = createResolver(import.meta.url)
 
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
@@ -22,7 +22,7 @@ export default defineNuxtModule<ModuleOptions>({
       addPlugin(resolver.resolve("./runtime/plugins/vuetify"))
     }
 
-    addComponentsDir({
+    await addComponentsDir({
       path: resolver.resolve("./runtime/components"),
       watch: true,
     })
