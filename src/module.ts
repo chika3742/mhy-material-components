@@ -21,6 +21,7 @@ export default defineNuxtModule<ModuleOptions>({
     if (options.injectVuetify) {
       addPlugin(resolver.resolve("./runtime/plugins/vuetify"))
     }
+    addPlugin(resolver.resolve("./runtime/plugins/locales"))
 
     await addComponentsDir({
       path: resolver.resolve("./runtime/components"),
