@@ -9,16 +9,15 @@ Common components to [genshin-material][genshin-material-repo-url] and [hsr-mate
 1. Add dependency to your project
 
     ```bash
-    # Using yarn
-    yarn add git+https://github.com/chika3742/mhy-material-components.git
+    # In preparation
    ```
 
-2. Add `std-components` to the `modules` section of `nuxt.config.ts`
+2. Add `mhy-material-components` to the `modules` section of `nuxt.config.ts`
 
     ```js
     export default defineNuxtConfig({
       modules: [
-        'std-components'
+        'mhy-material-components'
       ]
     })
     ```
