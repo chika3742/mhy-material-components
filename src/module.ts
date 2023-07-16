@@ -24,6 +24,8 @@ export default defineNuxtModule<ModuleOptions>({
       addPlugin(resolver.resolve("./runtime/plugins/vuetify"))
     }
 
+    addPlugin(resolver.resolve("./runtime/plugins/is-touch-device"))
+
     await addComponentsDir({
       path: resolver.resolve("./runtime/components"),
       watch: true,

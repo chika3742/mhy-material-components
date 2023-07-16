@@ -11,6 +11,8 @@ interface DrawerItem {
 const drawerItems: DrawerItem[] = [
   {title: "Home", to: "/"},
   {title: "Pity Counter", to: "/pity-counter"},
+  {title: "CharacterCard", to: "/character-card"},
+  {title: "CharacterIconCard", to: "/character-icon-card"},
 ]
 </script>
 
