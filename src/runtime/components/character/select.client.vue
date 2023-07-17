@@ -2,7 +2,7 @@
 import {onMounted, useI18n, useRoute} from "#imports"
 
 interface Props {
-  modelValue: string | null
+  modelValue: string | undefined
   label?: string
   characters: { id: string, image: string }[]
   maxWidth?: string

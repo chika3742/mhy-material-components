@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {ref} from "#imports"
 
-const value = ref<string | null>(null)
+const value = ref<string>()
 </script>
 
 <template>
