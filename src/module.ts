@@ -24,12 +24,15 @@ export default defineNuxtModule<ModuleOptions>({
       addPlugin(resolver.resolve("./runtime/plugins/vuetify"))
     }
 
+    addPlugin(resolver.resolve("./runtime/plugins/is-touch-device"))
+
     await addComponentsDir({
       path: resolver.resolve("./runtime/components"),
       watch: true,
     })
   },
   hooks: {
+    // @ts-ignore
     async "i18n:extend-messages"(messages) {
       const resolver = createResolver(import.meta.url)
       messages.push({
