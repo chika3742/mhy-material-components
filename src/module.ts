@@ -32,6 +32,7 @@ export default defineNuxtModule<ModuleOptions>({
     })
   },
   hooks: {
+    // @ts-ignore
     async "i18n:extend-messages"(messages) {
       const resolver = createResolver(import.meta.url)
       messages.push({
