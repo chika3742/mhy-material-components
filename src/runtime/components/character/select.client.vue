@@ -60,6 +60,7 @@ onMounted(() => {
           <div class="d-flex align-center mr-2">
             <v-img
               :src="item.raw.image"
+              aspect-ratio="1"
               width="40"
             />
           </div>

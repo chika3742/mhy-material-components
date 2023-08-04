@@ -23,7 +23,7 @@ const characterName = computed(() => {
     <div class="d-flex flex-column align-center">
       <v-img
         :src="image"
-        aspect-ratio="a"
+        aspect-ratio="1"
         width="80px"
       />
 
