@@ -28,9 +28,9 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 interface Emits {
-  (event: "toggle-bookmark"): void
+  (event: "toggle-bookmark", selectedExpItemId: string | undefined): void
 
-  (event: "re-bookmark"): void
+  (event: "re-bookmark", selectedExpItemId: string | undefined): void
 }
 
 defineEmits<Emits>()
@@ -128,7 +128,9 @@ const showBookmarkMenu = ref(false)
       <MaterialCardAction
         v-if="bookmarkState"
         :icon="bookmarkButtonIcon"
-        @click="bookmarkState === 'partial' ? showBookmarkMenu = !showBookmarkMenu : $emit('toggle-bookmark')"
+        @click="bookmarkState === 'partial'
+          ? showBookmarkMenu = !showBookmarkMenu
+          : $emit('toggle-bookmark', isExpItem ? _materialId : undefined)"
       >
         <template #menu>
           <v-menu
@@ -142,14 +144,14 @@ const showBookmarkMenu = ref(false)
                 prepend-icon="mdi-bookmark-check"
                 :title="$t('bookmark.reBookmark')"
                 :subtitle="$t('bookmark.reBookmarkDesc')"
-                @click="$emit('re-bookmark')"
+                @click="$emit('re-bookmark', isExpItem ? _materialId : undefined)"
               />
               <v-list-item
                 lines="two"
                 prepend-icon="mdi-delete"
                 :title="$t('bookmark.unBookmark')"
                 :subtitle="$t('bookmark.unBookmarkDesc')"
-                @click="$emit('toggle-bookmark')"
+                @click="$emit('toggle-bookmark', isExpItem ? _materialId : undefined)"
               />
             </v-list>
           </v-menu>

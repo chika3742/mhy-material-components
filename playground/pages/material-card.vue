@@ -23,8 +23,8 @@
       :rarity="4"
       bookmark-state="partial"
       is-exp-item
-      @toggle-bookmark="() => {console.log('toggle-bookmark')}"
-      @re-bookmark="() => {console.log('re-bookmark')}"
+      @toggle-bookmark="(selectedExpItemId) => {console.log('toggle-bookmark', selectedExpItemId)}"
+      @re-bookmark="(selectedExpItemId) => {console.log('re-bookmark', selectedExpItemId)}"
     />
 
     <MaterialCard
@@ -32,7 +32,7 @@
       :quantity="9000"
       :rarity="5"
       bookmark-state="full"
-      @toggle-bookmark="() => {console.log('toggle-bookmark')}"
+      @toggle-bookmark="(selectedExpItemId) => {console.log('toggle-bookmark', selectedExpItemId)}"
       @re-bookmark="() => {console.log('re-bookmark')}"
     />
   </div>
