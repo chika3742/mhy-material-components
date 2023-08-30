@@ -1,2 +1,8 @@
 pityCounter:
   title: Pity Counter
+
+bookmark:
+  reBookmark: Re-bookmark
+  reBookmarkDesc: Re-bookmark with current slider range.
+  unBookmark: Un-bookmark
+  unBookmarkDesc: Un-bookmark this item.
