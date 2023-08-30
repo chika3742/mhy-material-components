@@ -31,6 +31,7 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.vite.plugins ||= []
     nuxt.options.vite.plugins.push(yaml({
       include: resolver.resolve("./runtime/locales/*.yaml"),
+      exclude: "**",
     }))
 
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
