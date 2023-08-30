@@ -84,17 +84,8 @@ const showBookmarkMenu = ref(false)
     :v-slot:loader="false"
     color="card"
   >
-    <div
-      class="d-flex h-100"
-    >
-      <!--      <v-btn-->
-      <!--        v-if="isExpItem"-->
-      <!--        variant="text"-->
-      <!--        icon="mdi-swap-horizontal"-->
-      <!--        size="small"-->
-      <!--        @click.prevent="forwardSelectedExpItem"-->
-      <!--      />-->
-
+    <div class="d-flex h-100">
+      <!-- exp item forward button -->
       <MaterialCardAction
         v-if="isExpItem"
         icon="mdi-swap-horizontal"
@@ -125,6 +116,7 @@ const showBookmarkMenu = ref(false)
         >×{{ _quantity }}</span>
       </v-btn>
 
+      <!-- bookmark button -->
       <MaterialCardAction
         v-if="bookmarkState"
         :icon="bookmarkButtonIcon"
