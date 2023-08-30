@@ -28,6 +28,7 @@
     />
 
     <MaterialCard
+      material-id="test"
       :material-image="() => '/_nuxt/assets/img/test_small.webp'"
       :quantity="9000"
       :rarity="5"
