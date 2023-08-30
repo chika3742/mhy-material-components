@@ -18,6 +18,7 @@ interface Props {
   bookmarkState?: BookmarkState
   rarity?: number
   dimmed?: boolean
+  initialSelectedExpItemId?: string
   isExpItem?: boolean
 }
 
@@ -25,6 +26,7 @@ const props = withDefaults(defineProps<Props>(), {
   bookmarkState: undefined,
   materialId: undefined,
   rarity: undefined,
+  initialSelectedExpItemId: undefined,
 })
 
 interface Emits {
@@ -47,7 +49,9 @@ const markerColor = computed(() => {
   }
 })
 
-const selectedExpItemIndex = ref(0)
+const selectedExpItemIndex = ref(
+  Math.max(expItems.findIndex(e => e.id === props.initialSelectedExpItemId), 0),
+)
 const forwardSelectedExpItem = () => {
   selectedExpItemIndex.value = (selectedExpItemIndex.value + 1) % expItems.length
 }
