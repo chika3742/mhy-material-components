@@ -15,17 +15,19 @@ interface Props {
    * Quantity of the material or exp.
    */
   quantity: number
-  bookmarkState?: BookmarkState
-  rarity?: number
+  /**
+   * A method that returns the rarity of the material.
+   */
+  rarity: (materialId: string) => number
   dimmed?: boolean
+  bookmarkState?: BookmarkState
   initialSelectedExpItemId?: string
   isExpItem?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  bookmarkState: undefined,
   materialId: undefined,
-  rarity: undefined,
+  bookmarkState: undefined,
   initialSelectedExpItemId: undefined,
 })
 
@@ -41,14 +43,6 @@ const {$isTouchDevice} = useNuxtApp()
 const runtimeConfig = useRuntimeConfig().public.mhyMaterialComponents
 const expItems = runtimeConfig.itemOptions.expItems
 
-const markerColor = computed(() => {
-  if (typeof props.rarity !== "undefined") {
-    return `rgb(var(--v-theme-rarity-${props.rarity}))`
-  } else {
-    return ""
-  }
-})
-
 const selectedExpItemIndex = ref(
   Math.max(expItems.findIndex(e => e.id === props.initialSelectedExpItemId), 0),
 )
@@ -59,13 +53,17 @@ const forwardSelectedExpItem = () => {
 const _materialId = computed(() => {
   return props.isExpItem
     ? expItems[selectedExpItemIndex.value].id
-    : props.materialId
+    : props.materialId!
 })
 
 const _quantity = computed(() => {
   return props.isExpItem
     ? Math.ceil(props.quantity / expItems[selectedExpItemIndex.value].expPerItem)
     : props.quantity
+})
+
+const markerColorCss = computed(() => {
+  return `rgb(var(--v-theme-rarity-${props.rarity(_materialId.value)}))`
 })
 
 const bookmarkButtonIcon = computed(() => {
@@ -179,7 +177,7 @@ const showBookmarkMenu = ref(false)
   height: 0;
   border-style: solid;
   border-width: 0 0 16px 16px;
-  border-color: transparent transparent transparent v-bind(markerColor);
+  border-color: transparent transparent transparent v-bind(markerColorCss);
   z-index: 1;
   pointer-events: none;
 }
