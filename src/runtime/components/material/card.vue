@@ -121,6 +121,7 @@ const showBookmarkMenu = ref(false)
         <span
           v-show="$isTouchDevice"
           class="ml-1 font-kiwi-maru"
+          style="font-size: 1.2em"
         >{{ $t(`materialNames.${_materialId}`) }}</span>
         <span
           class="ml-2 font-cairo"
