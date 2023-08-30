@@ -3,3 +3,8 @@ pityCounter:
 
 characterNames:
   test: Test Chara
+
+materialNames:
+  test: Test Material
+  expItem1: Test EXP Item 1
+  expItem2: Test EXP Item 2
