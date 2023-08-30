@@ -41,7 +41,7 @@ const expItems = runtimeConfig.itemOptions.expItems
 
 const markerColor = computed(() => {
   if (typeof props.rarity !== "undefined") {
-    return `rgb(var(--v-theme-rarity${props.rarity}))`
+    return `rgb(var(--v-theme-rarity-${props.rarity}))`
   } else {
     return ""
   }
