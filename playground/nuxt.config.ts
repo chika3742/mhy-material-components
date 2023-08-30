@@ -15,10 +15,6 @@ export default defineNuxtConfig({
     ],
     langDir: "./locales/",
     defaultLocale: "ja",
-    vueI18n: {
-      legacy: false,
-      fallbackLocale: "ja",
-    },
   },
   mhyMaterialComponents: {
     itemOptions: {

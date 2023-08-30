@@ -1,7 +1,6 @@
 import {addComponentsDir, addPlugin, createResolver, defineNuxtModule} from "@nuxt/kit"
-import * as fs from "fs"
-import jsYaml from "js-yaml"
 import defu from "defu"
+import yaml from "@rollup/plugin-yaml"
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {
@@ -27,6 +26,11 @@ export default defineNuxtModule<ModuleOptions>({
     },
   },
   async setup(options, nuxt) {
+    nuxt.options.vite.plugins ||= []
+    nuxt.options.vite.plugins.push(yaml({
+      exclude: "playground/locales/**",
+    }))
+
     const resolver = createResolver(import.meta.url)
 
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
@@ -51,11 +55,21 @@ export default defineNuxtModule<ModuleOptions>({
   },
   hooks: {
     // @ts-ignore
-    async "i18n:extend-messages"(messages) {
-      const resolver = createResolver(import.meta.url)
-      messages.push({
-        ja: jsYaml.load(fs.readFileSync(resolver.resolve("./runtime/locales/ja.yaml"), "utf8")) as any,
-        en: jsYaml.load(fs.readFileSync(resolver.resolve("./runtime/locales/en.yaml"), "utf8")) as any,
+    async "i18n:registerModule"(registerModule) {
+      registerModule({
+        locales: [
+          {
+            code: "ja",
+            iso: "ja-JP",
+            file: "ja.yaml",
+          },
+          {
+            code: "en",
+            iso: "en-US",
+            file: "en.yaml",
+          },
+        ],
+        langDir: "src/runtime/locales/",
       })
     },
   },

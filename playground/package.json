@@ -8,7 +8,7 @@
     "generate": "nuxi generate"
   },
   "devDependencies": {
-    "nuxt": "latest",
-    "@nuxtjs/i18n": "8.0.0-beta.10"
+    "@nuxtjs/i18n": "^8.0.0-rc.3",
+    "nuxt": "3.6"
   }
 }
