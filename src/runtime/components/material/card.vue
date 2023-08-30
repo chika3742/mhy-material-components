@@ -3,7 +3,7 @@ import {computed, ref, useNuxtApp} from "#imports"
 import {BookmarkState} from "../../../types/bookmark-state"
 
 type ExpItemDef = {
-  id: string
+  itemId: string
   expPerItem: number
 }
 
@@ -54,7 +54,7 @@ if (props.isExpItem && props.expItemLineup.length === 0) {
 }
 
 const selectedExpItemIndex = ref(
-  Math.max(props.expItemLineup.findIndex(e => e.id === props.initialSelectedExpItemId), 0),
+  Math.max(props.expItemLineup.findIndex(e => e.itemId === props.initialSelectedExpItemId), 0),
 )
 const forwardSelectedExpItem = () => {
   selectedExpItemIndex.value = (selectedExpItemIndex.value + 1) % props.expItemLineup.length
@@ -62,7 +62,7 @@ const forwardSelectedExpItem = () => {
 
 const _materialId = computed(() => {
   return props.isExpItem
-    ? props.expItemLineup[selectedExpItemIndex.value].id
+    ? props.expItemLineup[selectedExpItemIndex.value].itemId
     : props.materialId!
 })
 
