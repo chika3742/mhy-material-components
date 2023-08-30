@@ -125,7 +125,7 @@ const showBookmarkMenu = ref(false)
         >{{ $t(`materialNames.${_materialId}`) }}</span>
         <span
           class="ml-2 font-cairo"
-          style="font-size: 1.2em"
+          style="font-size: 1.5em"
         >×{{ _quantity }}</span>
       </v-btn>
 
