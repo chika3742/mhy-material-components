@@ -5,14 +5,17 @@ const expItemLineup = [
   {
     id: "expItem1",
     expPerItem: 100,
+    rarity: 3,
   },
   {
     id: "expItem2",
     expPerItem: 1000,
+    rarity: 4,
   },
   {
     id: "expItem3",
     expPerItem: 5000,
+    rarity: 5,
   },
 ]
 
@@ -45,7 +48,7 @@ watch(loading, (_loading) => {
     <MaterialCard
       :material-image="() => '/_nuxt/assets/img/test_small.webp'"
       :quantity="5000"
-      :rarity="() => 4"
+      :rarity="(materialId) => expItemLineup.find(e => e.id === materialId)?.rarity ?? 3"
       bookmark-state="partial"
       :exp-item-lineup="expItemLineup"
       is-exp-item
@@ -68,7 +71,7 @@ watch(loading, (_loading) => {
       :exp-item-lineup="expItemLineup"
       :material-image="() => '/_nuxt/assets/img/test_small.webp'"
       :quantity="9000"
-      :rarity="() => 5"
+      :rarity="(materialId) => expItemLineup.find(e => e.id === materialId)?.rarity ?? 3"
       bookmark-state="none"
       initial-selected-exp-item-id="expItem2"
       :bookmark-button-loading="loading"
