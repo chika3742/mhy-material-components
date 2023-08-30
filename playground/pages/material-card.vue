@@ -12,7 +12,7 @@
       :material-image="() => '/_nuxt/assets/img/test_small.webp'"
       bookmark-state="none"
       :quantity="100"
-      :rarity="3"
+      :rarity="() => 3"
       @toggle-bookmark="() => {console.log('toggle-bookmark')}"
       @re-bookmark="() => {console.log('re-bookmark')}"
     />
@@ -20,7 +20,7 @@
     <MaterialCard
       :material-image="() => '/_nuxt/assets/img/test_small.webp'"
       :quantity="5000"
-      :rarity="4"
+      :rarity="() => 4"
       bookmark-state="partial"
       is-exp-item
       @toggle-bookmark="(selectedExpItemId) => {console.log('toggle-bookmark', selectedExpItemId)}"
@@ -31,8 +31,19 @@
       material-id="test"
       :material-image="() => '/_nuxt/assets/img/test_small.webp'"
       :quantity="9000"
-      :rarity="5"
+      :rarity="() => 5"
       bookmark-state="full"
+      @toggle-bookmark="(selectedExpItemId) => {console.log('toggle-bookmark', selectedExpItemId)}"
+      @re-bookmark="() => {console.log('re-bookmark')}"
+    />
+
+    <MaterialCard
+      is-exp-item
+      :material-image="() => '/_nuxt/assets/img/test_small.webp'"
+      :quantity="9000"
+      :rarity="() => 5"
+      bookmark-state="partial"
+      initial-selected-exp-item-id="expItem2"
       @toggle-bookmark="(selectedExpItemId) => {console.log('toggle-bookmark', selectedExpItemId)}"
       @re-bookmark="() => {console.log('re-bookmark')}"
     />
