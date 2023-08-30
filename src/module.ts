@@ -1,16 +1,9 @@
 import {addComponentsDir, addPlugin, createResolver, defineNuxtModule} from "@nuxt/kit"
-import defu from "defu"
 import yaml from "@rollup/plugin-yaml"
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {
   injectVuetify?: boolean
-  itemOptions?: {
-    expItems?: {
-      id: string
-      expPerItem: number
-    }[]
-  }
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -21,9 +14,6 @@ export default defineNuxtModule<ModuleOptions>({
   // Default configuration options of the Nuxt module
   defaults: {
     injectVuetify: true,
-    itemOptions: {
-      expItems: [],
-    },
   },
   async setup(options, nuxt) {
     const resolver = createResolver(import.meta.url)
@@ -45,14 +35,6 @@ export default defineNuxtModule<ModuleOptions>({
       path: resolver.resolve("./runtime/components"),
       watch: true,
     })
-
-    nuxt.options.runtimeConfig.public.mhyMaterialComponents = defu(
-      nuxt.options.runtimeConfig.public.mhyMaterialComponents,
-      {
-        itemOptions: options.itemOptions,
-      },
-    )
-
   },
   hooks: {
     // @ts-ignore

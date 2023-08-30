@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {computed, ref, useNuxtApp, useRuntimeConfig} from "#imports"
+import {computed, ref, useNuxtApp} from "#imports"
 import {BookmarkState} from "../../../types/bookmark-state"
 
 interface Props {
@@ -23,6 +23,10 @@ interface Props {
   bookmarkState?: BookmarkState
   initialSelectedExpItemId?: string
   isExpItem?: boolean
+  expItemLineup: {
+    id: string
+    expPerItem: number
+  }[]
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -40,25 +44,23 @@ interface Emits {
 defineEmits<Emits>()
 
 const {$isTouchDevice} = useNuxtApp()
-const runtimeConfig = useRuntimeConfig().public.mhyMaterialComponents
-const expItems = runtimeConfig.itemOptions.expItems
 
 const selectedExpItemIndex = ref(
-  Math.max(expItems.findIndex(e => e.id === props.initialSelectedExpItemId), 0),
+  Math.max(props.expItemLineup.findIndex(e => e.id === props.initialSelectedExpItemId), 0),
 )
 const forwardSelectedExpItem = () => {
-  selectedExpItemIndex.value = (selectedExpItemIndex.value + 1) % expItems.length
+  selectedExpItemIndex.value = (selectedExpItemIndex.value + 1) % props.expItemLineup.length
 }
 
 const _materialId = computed(() => {
   return props.isExpItem
-    ? expItems[selectedExpItemIndex.value].id
+    ? props.expItemLineup[selectedExpItemIndex.value].id
     : props.materialId!
 })
 
 const _quantity = computed(() => {
   return props.isExpItem
-    ? Math.ceil(props.quantity / expItems[selectedExpItemIndex.value].expPerItem)
+    ? Math.ceil(props.quantity / props.expItemLineup[selectedExpItemIndex.value].expPerItem)
     : props.quantity
 })
 
