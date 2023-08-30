@@ -1,5 +1,30 @@
 <script setup lang="ts">
+import {ref, watch} from "#imports"
 
+const expItemLineup = [
+  {
+    id: "expItem1",
+    expPerItem: 100,
+  },
+  {
+    id: "expItem2",
+    expPerItem: 1000,
+  },
+  {
+    id: "expItem3",
+    expPerItem: 5000,
+  },
+]
+
+const loading = ref(false)
+
+watch(loading, (_loading) => {
+  if (_loading) {
+    setTimeout(() => {
+      loading.value = false
+    }, 3000)
+  }
+})
 </script>
 
 <template>
@@ -22,6 +47,7 @@
       :quantity="5000"
       :rarity="() => 4"
       bookmark-state="partial"
+      :exp-item-lineup="expItemLineup"
       is-exp-item
       @toggle-bookmark="(selectedExpItemId) => {console.log('toggle-bookmark', selectedExpItemId)}"
       @re-bookmark="(selectedExpItemId) => {console.log('re-bookmark', selectedExpItemId)}"
@@ -39,13 +65,14 @@
 
     <MaterialCard
       is-exp-item
+      :exp-item-lineup="expItemLineup"
       :material-image="() => '/_nuxt/assets/img/test_small.webp'"
       :quantity="9000"
       :rarity="() => 5"
-      bookmark-state="partial"
+      bookmark-state="none"
       initial-selected-exp-item-id="expItem2"
-      @toggle-bookmark="(selectedExpItemId) => {console.log('toggle-bookmark', selectedExpItemId)}"
-      @re-bookmark="() => {console.log('re-bookmark')}"
+      :bookmark-button-loading="loading"
+      @toggle-bookmark="loading = true"
     />
   </div>
 </template>

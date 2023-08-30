@@ -2,6 +2,7 @@
 interface Props {
   icon: string
   compact?: boolean
+  loading?: boolean
 }
 
 defineProps<Props>()
@@ -15,14 +16,27 @@ defineEmits<Emits>()
 
 <template>
   <div
-    v-ripple
+    v-ripple=""
     class="material-card-action-container d-flex align-center justify-center position-relative"
-    :class="{compact}"
+    :class="{compact, loading}"
     @click="$emit('click')"
   >
-    <v-icon size="small">
-      {{ icon }}
-    </v-icon>
+    <v-fade-transition leave-absolute>
+      <v-icon
+        v-if="!loading"
+        size="small"
+      >
+        {{ icon }}
+      </v-icon>
+
+      <!-- loading indicator -->
+      <v-progress-circular
+        v-else
+        indeterminate
+        size="small"
+        width="3"
+      />
+    </v-fade-transition>
 
     <slot name="menu" />
 
@@ -42,6 +56,10 @@ defineEmits<Emits>()
   &.compact {
     width: 35px;
     min-width: 35px;
+  }
+
+  &.loading {
+    pointer-events: none;
   }
 }
 

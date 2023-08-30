@@ -2,6 +2,11 @@
 import {computed, ref, useNuxtApp} from "#imports"
 import {BookmarkState} from "../../../types/bookmark-state"
 
+type ExpItemDef = {
+  id: string
+  expPerItem: number
+}
+
 interface Props {
   /**
    * Material ID. Not required if `isExpItem` is true.
@@ -20,19 +25,18 @@ interface Props {
    */
   rarity: (materialId: string) => number
   dimmed?: boolean
+  bookmarkButtonLoading?: boolean
   bookmarkState?: BookmarkState
   initialSelectedExpItemId?: string
   isExpItem?: boolean
-  expItemLineup: {
-    id: string
-    expPerItem: number
-  }[]
+  expItemLineup?: ExpItemDef[]
 }
 
 const props = withDefaults(defineProps<Props>(), {
   materialId: undefined,
   bookmarkState: undefined,
   initialSelectedExpItemId: undefined,
+  expItemLineup: () => [],
 })
 
 interface Emits {
@@ -44,6 +48,10 @@ interface Emits {
 defineEmits<Emits>()
 
 const {$isTouchDevice} = useNuxtApp()
+
+if (props.isExpItem && props.expItemLineup.length === 0) {
+  throw new Error("expItemLineup must not be empty")
+}
 
 const selectedExpItemIndex = ref(
   Math.max(props.expItemLineup.findIndex(e => e.id === props.initialSelectedExpItemId), 0),
@@ -124,6 +132,7 @@ const showBookmarkMenu = ref(false)
       <MaterialCardAction
         v-if="bookmarkState"
         :icon="bookmarkButtonIcon"
+        :loading="bookmarkButtonLoading"
         @click="bookmarkState === 'partial'
           ? showBookmarkMenu = !showBookmarkMenu
           : $emit('toggle-bookmark', isExpItem ? _materialId : undefined)"
