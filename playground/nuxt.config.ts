@@ -1,6 +1,5 @@
 export default defineNuxtConfig({
   modules: ["../src/module", "@nuxtjs/i18n"],
-  mhyMaterialComponents: {},
   // @ts-ignore
   build: {
     transpile: ["vuetify"],
@@ -21,7 +20,6 @@ export default defineNuxtConfig({
       fallbackLocale: "ja",
     },
   },
-  // @ts-ignore
   mhyMaterialComponents: {
     itemOptions: {
       expItems: [
