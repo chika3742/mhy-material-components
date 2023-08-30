@@ -2,6 +2,8 @@
 
 Components common to [genshin-material][genshin-material-repo-url] and [hsr-material][hsr-material-repo-url].
 
+**This module injects Vuetify into website.** (can be disabled by setting `injectVuetify` to `false`)
+
 ## Installation
 
 1. Add dependency to your project
