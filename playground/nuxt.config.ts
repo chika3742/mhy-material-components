@@ -21,4 +21,19 @@ export default defineNuxtConfig({
       fallbackLocale: "ja",
     },
   },
+  // @ts-ignore
+  mhyMaterialComponents: {
+    itemOptions: {
+      expItems: [
+        {
+          id: "expItem1",
+          expPerItem: 100,
+        },
+        {
+          id: "expItem2",
+          expPerItem: 500,
+        },
+      ],
+    },
+  },
 })

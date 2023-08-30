@@ -14,6 +14,7 @@ const drawerItems: DrawerItem[] = [
   {title: "CharacterCard", to: "/character-card"},
   {title: "CharacterIconCard", to: "/character-icon-card"},
   {title: "CharacterSelect", to: "/character-select"},
+  {title: "MaterialCard", to: "/material-card"},
 ]
 </script>
 
