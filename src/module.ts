@@ -56,6 +56,8 @@ export default defineNuxtModule<ModuleOptions>({
   hooks: {
     // @ts-ignore
     async "i18n:registerModule"(registerModule) {
+      const resolver = createResolver(import.meta.url)
+
       registerModule({
         locales: [
           {
@@ -69,7 +71,7 @@ export default defineNuxtModule<ModuleOptions>({
             file: "en.yaml",
           },
         ],
-        langDir: "src/runtime/locales/",
+        langDir: resolver.resolve("./runtime/locales/"),
       })
     },
   },
