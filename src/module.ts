@@ -26,12 +26,12 @@ export default defineNuxtModule<ModuleOptions>({
     },
   },
   async setup(options, nuxt) {
+    const resolver = createResolver(import.meta.url)
+
     nuxt.options.vite.plugins ||= []
     nuxt.options.vite.plugins.push(yaml({
-      exclude: "playground/locales/**",
+      include: resolver.resolve("./runtime/locales/*.yaml"),
     }))
-
-    const resolver = createResolver(import.meta.url)
 
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
     if (options.injectVuetify) {
