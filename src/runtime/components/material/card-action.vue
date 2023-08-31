@@ -1,12 +1,16 @@
 <script setup lang="ts">
 interface Props {
+  height?: string
   icon: string
   iconColor?: string | undefined
   compact?: boolean
   loading?: boolean
 }
 
-defineProps<Props>()
+withDefaults(defineProps<Props>(), {
+  height: "50px",
+  iconColor: undefined,
+})
 
 interface Emits {
   (event: "click"): void
@@ -51,7 +55,7 @@ defineEmits<Emits>()
 
 <style scoped lang="scss">
 .material-card-action-container {
-  height: 45px;
+  height: v-bind(height);
   min-width: 40px;
   width: auto;
   padding: 0 8px;
