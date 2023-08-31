@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import {computed, ref, useNuxtApp} from "#imports"
-import {BookmarkState} from "../../../types/bookmark-state"
 
 type ExpItemDef = {
   itemId: string
   expPerItem: number
 }
+
+type BookmarkState = "none" | "partial" | "full"
 
 interface Props {
   /**
