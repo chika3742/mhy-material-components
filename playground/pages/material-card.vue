@@ -48,7 +48,7 @@ watch(loading, (_loading) => {
     <MaterialCard
       :material-image="() => '/_nuxt/assets/img/test_small.webp'"
       :quantity="5000"
-      :rarity="(materialId) => expItemLineup.find(e => e.id === materialId)?.rarity ?? 3"
+      :rarity="(materialId) => expItemLineup.find(e => e.itemId === materialId)?.rarity ?? 3"
       bookmark-state="partial"
       :exp-item-lineup="expItemLineup"
       is-exp-item
@@ -71,7 +71,7 @@ watch(loading, (_loading) => {
       :exp-item-lineup="expItemLineup"
       :material-image="() => '/_nuxt/assets/img/test_small.webp'"
       :quantity="9000"
-      :rarity="(materialId) => expItemLineup.find(e => e.id === materialId)?.rarity ?? 3"
+      :rarity="(materialId) => expItemLineup.find(e => e.itemId === materialId)?.rarity ?? 3"
       bookmark-state="none"
       initial-selected-exp-item-id="expItem2"
       :bookmark-button-loading="loading"
