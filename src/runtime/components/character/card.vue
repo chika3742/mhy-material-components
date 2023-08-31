@@ -60,11 +60,11 @@ defineProps<{
     font-size: 1.3rem;
     color: white;
     text-shadow: 0 0 4px black;
-  }
 
-  @media (max-width: 450px) {
-    font-size: 1em;
-    padding: 2px 8px;
+    @media (max-width: 450px) {
+      font-size: 1em;
+      padding: 2px 8px;
+    }
   }
 }
 </style>
