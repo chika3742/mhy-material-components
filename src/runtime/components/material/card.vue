@@ -86,6 +86,17 @@ const bookmarkButtonIcon = computed(() => {
       return "mdi-bookmark-check"
   }
 })
+const bookmarkButtonIconColor = computed(() => {
+  switch (props.bookmarkState) {
+    case "none":
+      return undefined
+    case "partial":
+      return "partially-bookmarked"
+    case "full":
+      return "bookmarked"
+  }
+})
+
 const showBookmarkMenu = ref(false)
 </script>
 
@@ -133,6 +144,7 @@ const showBookmarkMenu = ref(false)
       <MaterialCardAction
         v-if="bookmarkState"
         :icon="bookmarkButtonIcon"
+        :icon-color="bookmarkButtonIconColor"
         :loading="bookmarkButtonLoading"
         @click="bookmarkState === 'partial'
           ? showBookmarkMenu = !showBookmarkMenu

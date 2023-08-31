@@ -1,6 +1,7 @@
 <script setup lang="ts">
 interface Props {
   icon: string
+  iconColor?: string
   compact?: boolean
   loading?: boolean
 }
@@ -24,6 +25,7 @@ defineEmits<Emits>()
     <v-fade-transition leave-absolute>
       <v-icon
         v-if="!loading"
+        :color="iconColor"
         size="small"
       >
         {{ icon }}
