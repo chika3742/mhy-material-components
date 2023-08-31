@@ -3,17 +3,17 @@ import {ref, watch} from "#imports"
 
 const expItemLineup = [
   {
-    id: "expItem1",
+    itemId: "expItem1",
     expPerItem: 100,
     rarity: 3,
   },
   {
-    id: "expItem2",
+    itemId: "expItem2",
     expPerItem: 1000,
     rarity: 4,
   },
   {
-    id: "expItem3",
+    itemId: "expItem3",
     expPerItem: 5000,
     rarity: 5,
   },
