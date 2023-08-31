@@ -32,7 +32,7 @@ watch(loading, (_loading) => {
 
 <template>
   <div
-    class="d-flex"
+    class="d-flex flex-wrap"
     style="gap: 16px"
   >
     <MaterialCard
