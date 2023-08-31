@@ -1,7 +1,7 @@
 <script setup lang="ts">
 interface Props {
   icon: string
-  iconColor?: string
+  iconColor?: string | undefined
   compact?: boolean
   loading?: boolean
 }
