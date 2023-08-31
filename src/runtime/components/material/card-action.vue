@@ -36,6 +36,7 @@ defineEmits<Emits>()
         v-else
         indeterminate
         size="small"
+        color="primary"
         width="3"
       />
     </v-fade-transition>
