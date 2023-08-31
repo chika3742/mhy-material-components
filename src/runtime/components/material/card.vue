@@ -27,7 +27,7 @@ interface Props {
   rarity: (materialId: string) => number
   dimmed?: boolean
   bookmarkButtonLoading?: boolean
-  bookmarkState?: BookmarkState
+  bookmarkState?: BookmarkState | undefined
   initialSelectedExpItemId?: string
   isExpItem?: boolean
   expItemLineup?: ExpItemDef[]
@@ -78,6 +78,10 @@ const markerColorCss = computed(() => {
 })
 
 const bookmarkButtonIcon = computed(() => {
+  if (typeof props.bookmarkState === "undefined") {
+    return "mdi-bookmark"
+  }
+
   switch (props.bookmarkState) {
     case "none":
       return "mdi-bookmark"
@@ -88,6 +92,10 @@ const bookmarkButtonIcon = computed(() => {
   }
 })
 const bookmarkButtonIconColor = computed(() => {
+  if (typeof props.bookmarkState === "undefined") {
+    return undefined
+  }
+
   switch (props.bookmarkState) {
     case "none":
       return undefined
