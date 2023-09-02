@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import {onMounted, useI18n, useRoute} from "#imports"
+import {computed, onMounted, ref, useI18n, useRoute} from "#imports"
 
 interface Props {
   modelValue: string | undefined
@@ -7,12 +7,16 @@ interface Props {
   characters: { id: string, image: string }[]
   maxWidth?: string
   error?: string
+  filter?: (id: string) => boolean
+  filterDisableCheckboxText?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
   label: "",
   maxWidth: "unset",
   error: "",
+  filter: undefined,
+  filterDisableCheckboxText: "",
 })
 
 const emit = defineEmits<{
@@ -23,11 +27,29 @@ const emit = defineEmits<{
 const i18n = useI18n()
 const route = useRoute()
 
-const vSelectItems = props.characters.map(character => ({
-  title: i18n.t(`characterNames.${character.id}`),
-  value: character.id,
-  image: character.image,
-}))
+const isFilterDisabled = ref(false)
+
+const vSelectItems = computed(() => {
+  let characters = props.characters
+
+  if (!isFilterDisabled.value && props.filter) {
+    characters = characters.filter(e => props.filter?.(e.id))
+  }
+
+  return characters.map(character => ({
+    title: i18n.t(`characterNames.${character.id}`),
+    value: character.id,
+    image: character.image,
+  }))
+})
+
+const toggleFilterDisabled = () => {
+  isFilterDisabled.value = !isFilterDisabled.value
+
+  if (props.modelValue && !vSelectItems.value.some(({value: id}) => props.modelValue === id)) {
+    emit("update:modelValue", vSelectItems.value[0].value)
+  }
+}
 
 onMounted(() => {
   const character = props.characters.find(e => e.id === route.query.character)
@@ -64,6 +86,21 @@ onMounted(() => {
               width="40"
             />
           </div>
+        </template>
+      </v-list-item>
+    </template>
+
+    <template
+      v-if="filter"
+      #append-item
+    >
+      <v-divider class="mb-2" />
+      <v-list-item
+        :title="filterDisableCheckboxText"
+        @click="toggleFilterDisabled"
+      >
+        <template #prepend>
+          <v-checkbox-btn :model-value="isFilterDisabled" />
         </template>
       </v-list-item>
     </template>
