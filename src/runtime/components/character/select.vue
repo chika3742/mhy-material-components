@@ -52,11 +52,18 @@ const toggleFilterDisabled = () => {
 }
 
 onMounted(() => {
-  const character = props.characters.find(e => e.id === route.query.character)
-  if (character) {
-    emit("update:modelValue", character.id)
+  const initialCharacter = props.characters.find(e => e.id === route.query.character)
+  if (initialCharacter) {
+    emit("update:modelValue", initialCharacter.id)
   } else {
-    emit("update:modelValue", props.characters[0].id)
+    const characters = (() => {
+      if (props.filter) {
+        return props.characters.filter((e) => props.filter!(e.id))
+      } else {
+        return props.characters
+      }
+    })()
+    emit("update:modelValue", characters[0].id)
   }
 })
 
