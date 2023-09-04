@@ -32,7 +32,7 @@ const isFilterDisabled = ref(false)
 const vSelectItems = computed(() => {
   let characters = props.characters
 
-  if (!isFilterDisabled.value && props.filter) {
+  if (props.filter && !isFilterDisabled.value) {
     characters = characters.filter(e => props.filter?.(e.id))
   }
 
