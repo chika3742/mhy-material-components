@@ -104,10 +104,14 @@ onMounted(() => {
       <v-divider class="mb-2" />
       <v-list-item
         :title="filterDisableCheckboxText"
+        density="compact"
         @click="toggleFilterDisabled"
       >
         <template #prepend>
-          <v-checkbox-btn :model-value="isFilterDisabled" />
+          <v-checkbox-btn
+            :model-value="isFilterDisabled"
+            density="compact"
+          />
         </template>
       </v-list-item>
     </template>
