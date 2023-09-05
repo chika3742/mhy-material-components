@@ -55,7 +55,8 @@ defineEmits<Emits>()
 
 <style scoped lang="scss">
 .material-card-action-container {
-  height: v-bind(height);
+  height: 100%;
+  min-height: v-bind(height);
   min-width: 40px;
   width: auto;
   padding: 0 8px;

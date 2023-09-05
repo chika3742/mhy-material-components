@@ -128,25 +128,27 @@ const showBookmarkMenu = ref(false)
       <!-- item & qty info -->
       <v-btn
         variant="text"
-        class="d-flex align-center h-100 px-2"
+        class="flex-shrink-1 h-100 px-2"
         :rounded="0"
         style="gap: 4px"
         :to="localePath(`/materials/${_materialId}`)"
       >
-        <v-img
-          :src="materialImage(_materialId)"
-          height="35"
-          width="35"
-        />
-        <span
-          v-show="$isTouchDevice"
-          class="ml-1 font-kiwi-maru"
-          style="font-size: 1.2em"
-        >{{ $t(`materialNames.${_materialId}`) }}</span>
-        <span
-          class="ml-2 font-cairo"
-          style="font-size: 1.5em"
-        >×{{ _quantity }}</span>
+        <div class="d-flex align-center">
+          <v-img
+            :src="materialImage(_materialId)"
+            height="35"
+            width="35"
+          />
+          <span
+            v-show="$isTouchDevice"
+            class="ml-1 font-kiwi-maru text-wrap flex-shrink-1"
+            style="font-size: 1.2em"
+          >{{ $t(`materialNames.${_materialId}`) }}</span>
+          <span
+            class="ml-2 font-cairo"
+            style="font-size: 1.5em"
+          >×{{ _quantity }}</span>
+        </div>
       </v-btn>
 
       <!-- bookmark button -->
