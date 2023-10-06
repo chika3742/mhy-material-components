@@ -3,6 +3,7 @@ pityCounter:
 
 characterNames:
   test: Test Chara
+  test_variant: Test Chara (variant)
 
 materialNames:
   test: Test Material

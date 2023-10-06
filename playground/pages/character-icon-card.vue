@@ -5,7 +5,11 @@
 <template>
   <v-row no-gutters>
     <CharacterIconCard
-      character-id="test"
+      character-id-with-variant="test"
+      image-url="/_nuxt/assets/img/test_small.webp"
+    />
+    <CharacterIconCard
+      character-id-with-variant="test_variant"
       image-url="/_nuxt/assets/img/test_small.webp"
     />
   </v-row>
