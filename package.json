@@ -34,7 +34,7 @@
     "defu": "^6.1.2",
     "js-yaml": "^4.1.0",
     "sass": "^1.69.0",
-    "vuetify": "^3.3.5"
+    "vuetify": "^3.3.20"
   },
   "devDependencies": {
     "@nuxt/devtools": "^0.8.5",
