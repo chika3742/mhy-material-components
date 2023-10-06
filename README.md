@@ -1,6 +1,6 @@
 # mhy-material-components
 
-Components common to [genshin-material][genshin-material-repo-url] and [hsr-material][hsr-material-repo-url].
+Components common to [genshin-material][genshin-material-repo-url] and [hsr-material][hsr-material-repo-url]. **Not intended for external use.**
 
 **This module injects Vuetify into website.** (can be disabled by setting `injectVuetify` to `false`)
 
