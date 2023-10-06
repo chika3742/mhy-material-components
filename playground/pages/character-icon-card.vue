@@ -6,7 +6,7 @@
   <v-row no-gutters>
     <CharacterIconCard
       character-id="test"
-      image="/_nuxt/assets/img/test_small.webp"
+      image-url="/_nuxt/assets/img/test_small.webp"
     />
   </v-row>
 </template>

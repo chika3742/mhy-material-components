@@ -4,7 +4,7 @@ import {computed, useI18n, useNuxtApp} from "#imports"
 const props = defineProps<{
   characterId: string
   query?: Record<string, string>
-  image: string
+  imageUrl: string
 }>()
 
 const i18n = useI18n()
@@ -22,7 +22,7 @@ const characterName = computed(() => {
   >
     <div class="d-flex flex-column align-center">
       <v-img
-        :src="image"
+        :src="imageUrl"
         aspect-ratio="1"
         width="80px"
       />
