@@ -29,7 +29,7 @@
   "dependencies": {
     "@mdi/font": "^7.2.96",
     "@nuxt/kit": "^3.5.2",
-    "@nuxtjs/i18n": "^8.0.0-rc.3",
+    "@nuxtjs/i18n": "^8.0.0-rc.5",
     "@rollup/plugin-yaml": "^4.1.2",
     "defu": "^6.1.2",
     "js-yaml": "^4.1.0",
