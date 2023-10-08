@@ -27,7 +27,7 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@mdi/font": "^7.2.96",
+    "@mdi/font": "^7.3.67",
     "@nuxt/kit": "^3.5.2",
     "@nuxtjs/i18n": "^8.0.0-rc.5",
     "@rollup/plugin-yaml": "^4.1.2",
