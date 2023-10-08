@@ -30,6 +30,7 @@ export default defineNuxtModule<ModuleOptions>({
     }
 
     addPlugin(resolver.resolve("./runtime/plugins/is-touch-device"))
+    addPlugin(resolver.resolve("./runtime/plugins/directives/safe-area"))
 
     await addComponentsDir({
       path: resolver.resolve("./runtime/components"),
