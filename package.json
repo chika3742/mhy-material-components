@@ -10,9 +10,6 @@
       "types": "./dist/types.d.ts",
       "import": "./dist/module.mjs",
       "require": "./dist/module.cjs"
-    },
-    "./enums": {
-      "types": "./src/enums.d.ts"
     }
   },
   "main": "./dist/module.cjs",

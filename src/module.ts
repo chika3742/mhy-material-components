@@ -1,4 +1,4 @@
-import {addComponentsDir, addPlugin, createResolver, defineNuxtModule} from "@nuxt/kit"
+import {addComponentsDir, addPlugin, addTypeTemplate, createResolver, defineNuxtModule} from "@nuxt/kit"
 import yaml from "@rollup/plugin-yaml"
 
 // Module options TypeScript interface definition
@@ -36,6 +36,11 @@ export default defineNuxtModule<ModuleOptions>({
       path: resolver.resolve("./runtime/components"),
       watch: true,
     })
+
+    addTypeTemplate({
+      filename: "types/enums.d.ts",
+      src: resolver.resolve("./types/enums.d.ts"),
+    })
   },
   hooks: {
     // @ts-ignore
@@ -60,3 +65,5 @@ export default defineNuxtModule<ModuleOptions>({
     },
   },
 })
+
+// export * from "./types/enums"
