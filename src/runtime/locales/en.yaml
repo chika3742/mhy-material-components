@@ -6,3 +6,12 @@ bookmark:
   reBookmarkDesc: Re-bookmark with current slider range.
   unBookmark: Un-bookmark
   unBookmarkDesc: Un-bookmark this item.
+
+footer:
+  feedback: Feedback
+  disclaimer: This site is UNOFFICIAL.
+  theme: Theme
+  themeOptions:
+    auto: Auto (System)
+    light: Light
+    dark: Dark
