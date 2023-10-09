@@ -1,5 +1,9 @@
 <script setup lang="ts">
-import {ref} from "#imports"
+import {definePageMeta, ref} from "#imports"
+
+definePageMeta({
+  title: "CharacterSelect",
+})
 
 const value = ref<string>()
 

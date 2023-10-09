@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import {ref} from "#imports"
+import {ref, useRouter} from "#imports"
+
+const router = useRouter()
 
 const isDrawerOpen = ref(false)
 
@@ -8,14 +10,12 @@ interface DrawerItem {
   to: string
 }
 
-const drawerItems: DrawerItem[] = [
-  {title: "Home", to: "/"},
-  {title: "Pity Counter", to: "/pity-counter"},
-  {title: "CharacterCard", to: "/character-card"},
-  {title: "CharacterIconCard", to: "/character-icon-card"},
-  {title: "CharacterSelect", to: "/character-select"},
-  {title: "MaterialCard", to: "/material-card"},
-]
+const drawerItems = router.getRoutes()
+  .filter(e => e.meta.title && !e.path.startsWith("/en/"))
+  .map<DrawerItem>((e) => ({
+    title: e.meta.title as string,
+    to: e.path,
+  }))
 </script>
 
 <template>

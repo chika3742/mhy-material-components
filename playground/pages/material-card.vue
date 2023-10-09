@@ -1,5 +1,9 @@
 <script setup lang="ts">
-import {ref, watch} from "#imports"
+import {definePageMeta, ref, watch} from "#imports"
+
+definePageMeta({
+  title: "MaterialCard",
+})
 
 const expItemLineup = [
   {
