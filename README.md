@@ -23,7 +23,6 @@ Components common to [genshin-material][genshin-material-repo-url] and [hsr-mate
     ```
 
    > **Warning**
-   >
    > This module must be placed before `@nuxtjs/i18n` module.
 
 ## Development
