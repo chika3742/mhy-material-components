@@ -2915,6 +2915,10 @@ escodegen@^2.0.0:
   optionalDependencies:
     source-map "~0.6.1"
 
+"eslint-config-nuxt@github:chika3742/eslint-config-nuxt":
+  version "1.0.0"
+  resolved "https://codeload.github.com/chika3742/eslint-config-nuxt/tar.gz/cf76448b57064b58b015cafa2a365cf581e556b6"
+
 eslint-plugin-vue@^9.17.0:
   version "9.17.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-9.17.0.tgz#4501547373f246547083482838b4c8f4b28e5932"
