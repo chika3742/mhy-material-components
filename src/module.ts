@@ -39,7 +39,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     addTypeTemplate({
       filename: "types/enums.d.ts",
-      src: resolver.resolve("./types/enums.d.ts"),
+      src: resolver.resolve("./runtime/types/enums.d.ts"),
     })
   },
   hooks: {
