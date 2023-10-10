@@ -1,6 +1,5 @@
 export default defineNuxtConfig({
   modules: ["../src/module", "@nuxtjs/i18n"],
-  // @ts-ignore
   build: {
     transpile: ["vuetify"],
   },
