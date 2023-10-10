@@ -1,8 +1,9 @@
 import {VueI18n} from "vue-i18n"
+import {RouteLocationRaw} from "vue-router"
 
 declare module "@vue/runtime-core" {
   interface ComponentCustomProperties {
-    localePath(route: string, locale?: string): string
+    localePath(route: RouteLocationRaw | string, locale?: string): string
 
     switchLocalePath(locale: string): string
 
