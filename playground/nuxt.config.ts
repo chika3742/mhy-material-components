@@ -16,18 +16,5 @@ export default defineNuxtConfig({
     langDir: "./locales/",
     defaultLocale: "ja",
   },
-  mhyMaterialComponents: {
-    itemOptions: {
-      expItems: [
-        {
-          id: "expItem1",
-          expPerItem: 100,
-        },
-        {
-          id: "expItem2",
-          expPerItem: 500,
-        },
-      ],
-    },
-  },
+  mhyMaterialComponents: {},
 })
