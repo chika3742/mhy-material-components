@@ -30,6 +30,7 @@ export default defineNuxtModule<ModuleOptions>({
     }
 
     addPlugin(resolver.resolve("./runtime/plugins/is-touch-device"))
+    addPlugin(resolver.resolve("./runtime/plugins/utils"))
     addPlugin(resolver.resolve("./runtime/plugins/directives/safe-area"))
 
     await addComponentsDir({
@@ -38,8 +39,18 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     addTypeTemplate({
-      filename: "types/enums.d.ts",
+      filename: "types/mmc.d.ts",
+      src: resolver.resolve("./runtime/types/index.d.ts"),
+    })
+
+    addTypeTemplate({
+      filename: "types/mmc-enums.d.ts",
       src: resolver.resolve("./runtime/types/enums.d.ts"),
+    })
+
+    addTypeTemplate({
+      filename: "types/mmc-plugins.d.ts",
+      src: resolver.resolve("./runtime/types/plugins.d.ts"),
     })
   },
   hooks: {

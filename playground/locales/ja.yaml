@@ -10,3 +10,6 @@ materialNames:
   expItem1: Test EXP Item 1
   expItem2: Test EXP Item 2
   expItem3: Test EXP Item 3
+
+pageTitles:
+  MaterialCard: Material Card
