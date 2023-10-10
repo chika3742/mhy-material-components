@@ -137,7 +137,7 @@
 </template>
 
 <script lang="ts" setup>
-import {UAParser} from "ua-parser-js"
+import UAParser from "ua-parser-js"
 import {computed, useI18n} from "#imports"
 
 interface Props {
