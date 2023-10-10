@@ -137,7 +137,6 @@
 </template>
 
 <script lang="ts" setup>
-import UAParser from "ua-parser-js"
 import {computed, useI18n} from "#imports"
 
 interface Props {
@@ -183,9 +182,7 @@ const feedbackUrl = computed(() => {
     return ""
   }
 
-  const ua = new UAParser(navigator.userAgent)
-  const browser = ua.getBrowser()
-  return `${props.repositoryUrl}/issues/new/choose?browser=${browser.name} ${browser.version}&app-version=${props.currentVersion}`
+  return `${props.repositoryUrl}/issues/new/choose?app-version=${props.currentVersion}`
 })
 
 const feedbackMenuItems = computed(() => {
