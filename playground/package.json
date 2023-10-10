@@ -3,7 +3,7 @@
   "name": "mhy-material-components-playground",
   "type": "module",
   "scripts": {
-    "dev": "nuxi dev",
+    "dev": "nuxi dev --port 3000",
     "build": "nuxi build",
     "generate": "nuxi generate"
   },
