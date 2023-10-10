@@ -8,8 +8,15 @@ bookmark:
   unBookmarkDesc: Un-bookmark this item.
 
 footer:
-  feedback: Feedback
   disclaimer: This site is UNOFFICIAL.
+  feedback: Feedback
+  feedbackMenuItems:
+    comment: Special Page
+    commentDesc: You can submit feedback in the comments section without creating an account.
+    hoyolab: HoYoLAB
+    hoyolabDesc: You can post comments on HoYoLAB article.
+    github: GitHub
+    githubDesc: You can create an issue on GitHub (advanced).
   theme: Theme
   themeOptions:
     auto: Auto (System)

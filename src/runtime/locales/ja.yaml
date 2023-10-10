@@ -8,8 +8,15 @@ bookmark:
   unBookmarkDesc: このアイテムのブックマークを解除します。
 
 footer:
-  feedback: フィードバック
   disclaimer: このサイトは非公式です。
+  feedback: フィードバック
+  feedbackMenuItems:
+    comment: コメントページ
+    commentDesc: アカウント作成不要で送信できます。
+    hoyolab: HoYoLAB
+    hoyolabDesc: 記事へのコメントでフィードバックできます。
+    github: GitHub
+    githubDesc: 知識のある方は、直接Issueを立てることもできます。
   theme: テーマ
   themeOptions:
     auto: システム設定に従う
