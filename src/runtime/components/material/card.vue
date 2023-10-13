@@ -31,6 +31,7 @@ interface Props {
   initialSelectedExpItemId?: string
   isExpItem?: boolean
   expItemLineup?: ExpItemDef[]
+  farmingCount?: (materialId: string) => number | null
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -38,6 +39,7 @@ const props = withDefaults(defineProps<Props>(), {
   bookmarkState: undefined,
   initialSelectedExpItemId: undefined,
   expItemLineup: () => [],
+  farmingCount: undefined,
 })
 
 interface Emits {
@@ -148,6 +150,13 @@ const showBookmarkMenu = ref(false)
             class="ml-2 font-cairo"
             style="font-size: 1.5em"
           >×{{ _quantity }}</span>
+          <div
+            v-if="farmingCount && farmingCount(_materialId)"
+            class="pt-4 mr-n2"
+          >
+            <v-icon>mdi-tractor</v-icon>
+            <span>{{ farmingCount(_materialId) }}</span>
+          </div>
         </div>
       </v-btn>
 

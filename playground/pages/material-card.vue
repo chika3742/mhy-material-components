@@ -66,6 +66,7 @@ watch(loading, (_loading) => {
       :quantity="9000"
       :rarity="() => 5"
       bookmark-state="full"
+      :farming-count="() => 5"
       @toggle-bookmark="(selectedExpItemId) => {console.log('toggle-bookmark', selectedExpItemId)}"
       @re-bookmark="() => {console.log('re-bookmark')}"
     />
