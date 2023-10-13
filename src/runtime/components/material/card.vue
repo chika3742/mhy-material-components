@@ -31,7 +31,7 @@ interface Props {
   initialSelectedExpItemId?: string
   isExpItem?: boolean
   expItemLineup?: ExpItemDef[]
-  farmingCount?: (materialId: string) => number | null
+  farmingCount?: (materialId: string, quantity: number) => number | null
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -151,11 +151,11 @@ const showBookmarkMenu = ref(false)
             style="font-size: 1.5em"
           >×{{ _quantity }}</span>
           <div
-            v-if="farmingCount && farmingCount(_materialId)"
+            v-if="farmingCount && farmingCount(_materialId, _quantity)"
             class="pt-4 mr-n2"
           >
             <v-icon>mdi-tractor</v-icon>
-            <span>{{ farmingCount(_materialId) }}</span>
+            <span>{{ farmingCount(_materialId, _quantity) }}</span>
           </div>
         </div>
       </v-btn>
