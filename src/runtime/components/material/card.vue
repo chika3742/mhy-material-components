@@ -158,7 +158,7 @@ const farmingCount = computed(() => {
             style="font-size: 1.5em"
           >×{{ _quantity }}</span>
           <div
-            v-if="farmingCount"
+            v-show="farmingCount"
             class="pt-4 mr-n2"
           >
             <v-icon>mdi-tractor</v-icon>
