@@ -109,6 +109,13 @@ const bookmarkButtonIconColor = computed(() => {
 })
 
 const showBookmarkMenu = ref(false)
+
+const farmingCount = computed(() => {
+  if (props.farmingCount) {
+    return props.farmingCount(_materialId.value, _quantity.value)
+  }
+  return null
+})
 </script>
 
 <template>
@@ -151,11 +158,11 @@ const showBookmarkMenu = ref(false)
             style="font-size: 1.5em"
           >×{{ _quantity }}</span>
           <div
-            v-if="farmingCount && farmingCount(_materialId, _quantity)"
+            v-if="farmingCount"
             class="pt-4 mr-n2"
           >
             <v-icon>mdi-tractor</v-icon>
-            <span>{{ farmingCount(_materialId, _quantity) }}</span>
+            <span>{{ farmingCount }}</span>
           </div>
         </div>
       </v-btn>
