@@ -160,6 +160,7 @@ const farmingCount = computed(() => {
           <div
             v-if="farmingCount"
             class="pt-4 mr-n2"
+            style="opacity: 0.6"
           >
             <v-icon>mdi-tractor</v-icon>
             <span>{{ farmingCount }}</span>
