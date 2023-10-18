@@ -6,18 +6,25 @@ Components common to [genshin-material][genshin-material-repo-url] and [hsr-mate
 
 ## Installation
 
-1. Add dependency to your project
+1. Create `bunfig.toml` file in the root of your project
 
-    ```bash
-    yarn add mhy-material-components@https://github.com/chika3742/mhy-material-components#main
+    ```toml
+    [install.scopes]
+    "@chika3742" = { token = "$GITHUB_TOKEN", url = "https://npm.pkg.github.com" }
     ```
 
-2. Add `mhy-material-components` to the `modules` section of `nuxt.config.ts`
+2. Add dependency to project
+
+    ```bash
+    bun add @chika3742/mhy-material-components
+    ```
+
+3. Add `mhy-material-components` to the `modules` section of `nuxt.config.ts`
 
     ```js
     export default defineNuxtConfig({
       modules: [
-        'mhy-material-components'
+        '@chika3742/mhy-material-components'
       ]
     })
     ```
