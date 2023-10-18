@@ -175,7 +175,8 @@ const farmingCount = computed(() => {
       <MaterialCardAction
         :icon="bookmarkButtonIcon"
         :icon-color="bookmarkButtonIconColor"
-        :loading="typeof bookmarkState === 'undefined' || bookmarkButtonLoading"
+        :loading="bookmarkButtonLoading"
+        :disabled="typeof bookmarkState === 'undefined'"
         @click="bookmarkState === 'partial'
           ? showBookmarkMenu = !showBookmarkMenu
           : $emit('toggle-bookmark', isExpItem ? _materialId : undefined)"

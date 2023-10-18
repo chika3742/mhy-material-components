@@ -5,6 +5,7 @@ interface Props {
   iconColor?: string | undefined
   compact?: boolean
   loading?: boolean
+  disabled?: boolean
 }
 
 withDefaults(defineProps<Props>(), {
@@ -23,7 +24,7 @@ defineEmits<Emits>()
   <div
     v-ripple
     class="material-card-action-container d-flex align-center justify-center position-relative"
-    :class="{compact, loading}"
+    :class="{compact, loading, disabled}"
     @click="$emit('click')"
   >
     <v-fade-transition leave-absolute>
@@ -66,8 +67,12 @@ defineEmits<Emits>()
     min-width: 35px;
   }
 
-  &.loading {
+  &.loading, &.disabled {
     pointer-events: none;
+  }
+
+  &.disabled {
+    opacity: 0.5;
   }
 }
 
