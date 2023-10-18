@@ -1,16 +1,19 @@
 {
-  "name": "mhy-material-components",
+  "name": "@chika3742/mhy-material-components",
   "version": "0.0.0",
   "description": "Common components for genshin-material / hsr-material",
   "license": "MIT",
   "type": "module",
-  "private": true,
   "exports": {
     ".": {
       "types": "./dist/types.d.ts",
       "import": "./dist/module.mjs",
       "require": "./dist/module.cjs"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chika3742/mhy-material-components.git"
   },
   "main": "./dist/module.cjs",
   "types": "./dist/types.d.ts",
@@ -49,5 +52,8 @@
     "eslint-config-nuxt": "github:chika3742/eslint-config-nuxt",
     "nuxt": "^3.7.4",
     "vitest": "^0.34.6"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }
