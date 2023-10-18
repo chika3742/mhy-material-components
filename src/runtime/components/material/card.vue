@@ -27,6 +27,9 @@ interface Props {
   rarity: (materialId: string) => number
   dimmed?: boolean
   bookmarkButtonLoading?: boolean
+  /**
+   * If `undefined`, loading indicator will be shown.
+   */
   bookmarkState?: BookmarkState | undefined
   initialSelectedExpItemId?: string
   isExpItem?: boolean
@@ -170,10 +173,9 @@ const farmingCount = computed(() => {
 
       <!-- bookmark button -->
       <MaterialCardAction
-        v-if="bookmarkState"
         :icon="bookmarkButtonIcon"
         :icon-color="bookmarkButtonIconColor"
-        :loading="bookmarkButtonLoading"
+        :loading="typeof bookmarkState === 'undefined' || bookmarkButtonLoading"
         @click="bookmarkState === 'partial'
           ? showBookmarkMenu = !showBookmarkMenu
           : $emit('toggle-bookmark', isExpItem ? _materialId : undefined)"

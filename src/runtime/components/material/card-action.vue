@@ -21,7 +21,7 @@ defineEmits<Emits>()
 
 <template>
   <div
-    v-ripple=""
+    v-ripple
     class="material-card-action-container d-flex align-center justify-center position-relative"
     :class="{compact, loading}"
     @click="$emit('click')"
@@ -77,7 +77,7 @@ defineEmits<Emits>()
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: opacity 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
     opacity: calc(var(--v-hover-opacity) * var(--v-theme-overlay-multiplier));

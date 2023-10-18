@@ -82,6 +82,15 @@ watch(loading, (_loading) => {
       :bookmark-button-loading="loading"
       @toggle-bookmark="loading = true"
     />
+
+    <MaterialCard
+      is-exp-item
+      :exp-item-lineup="expItemLineup"
+      :material-image="() => '/_nuxt/assets/img/test_small.webp'"
+      :quantity="9000"
+      :rarity="(materialId) => expItemLineup.find(e => e.itemId === materialId)?.rarity ?? 3"
+      initial-selected-exp-item-id="expItem2"
+    />
   </div>
 </template>
 
