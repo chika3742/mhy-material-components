@@ -32,4 +32,4 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Git push
-        run: git push
+        run: git push origin --follow-tags
