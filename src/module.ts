@@ -24,7 +24,7 @@ export default defineNuxtModule<ModuleOptions>({
       exclude: "**",
     }))
 
-    nuxt.options.css.push(resolver.resolve("./runtime/global.sass"))
+    nuxt.options.css.push(resolver.resolve("./runtime/global.scss"))
 
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
     if (options.injectVuetify) {
