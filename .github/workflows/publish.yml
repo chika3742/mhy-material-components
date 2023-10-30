@@ -19,7 +19,7 @@ jobs:
 
       - uses: oven-sh/setup-bun@v1
 
-      - run: bun install
+      - run: bun install --frozen-lockfile
 
       - name: Bump version
         run: |
