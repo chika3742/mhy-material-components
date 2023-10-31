@@ -1,6 +1,6 @@
 import {addComponentsDir, addPlugin, addTypeTemplate, createResolver, defineNuxtModule} from "@nuxt/kit"
 import yaml from "@rollup/plugin-yaml"
-import {isDevelopment} from "std-env"
+import {withCssExtension} from "./utils/with-css-extension"
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {
@@ -25,8 +25,7 @@ export default defineNuxtModule<ModuleOptions>({
       exclude: "**",
     }))
 
-    const cssExtension = isDevelopment ? "scss" : "css"
-    nuxt.options.css.push(resolver.resolve(`./runtime/styles/global.${cssExtension}`))
+    nuxt.options.css.push(await withCssExtension(resolver.resolve("./runtime/styles/global")))
 
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
     if (options.injectVuetify) {
