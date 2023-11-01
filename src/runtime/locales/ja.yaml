@@ -22,3 +22,10 @@ footer:
     auto: システム設定に従う
     light: ライト
     dark: ダーク
+
+releaseNotesPage:
+  legends: 凡例
+  color: 色
+  desc: 説明
+  orangeDesc: 機能関連の追加や改善を含む
+  lightBlueDesc: キャラ・武器等のデータ追加のみ

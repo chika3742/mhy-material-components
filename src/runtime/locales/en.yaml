@@ -22,3 +22,10 @@ footer:
     auto: Auto (System)
     light: Light
     dark: Dark
+
+releaseNotesPage:
+  legends: Legends
+  color: Color
+  desc: Description
+  orangeDesc: Includes additions and improvements related to features
+  lightBlueDesc: Only data additions of characters, weapons, etc.

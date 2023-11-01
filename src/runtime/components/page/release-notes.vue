@@ -1,0 +1,120 @@
+<script setup lang="ts">
+import {computed, ref} from "#imports"
+import {Marked} from "marked"
+import {tx} from "../../utils/i18n"
+
+interface Props {
+  releaseNotes: ReleaseNote[]
+}
+
+defineProps<Props>()
+
+const marked = new Marked()
+
+const timelineExpanded = ref(false)
+const timeline = ref<{ $el: HTMLElement } | null>(null)
+
+const timelineStyle = computed(() => {
+  if (!timeline.value) {
+    return "max-height: 600px"
+  } // fallback
+
+  if (timeline.value.$el.scrollHeight < 600) { // if content is less than 600px
+    return ""
+  }
+
+  if (timelineExpanded.value) { // expanded
+    return `height: ${timeline.value.$el.scrollHeight}px`
+  }
+  return "max-height: 600px; height: 600px" // collapsed
+})
+</script>
+
+<template>
+  <div class="doc-container">
+    <section>
+      <h2>{{ $t("pageTitles.releaseNotes") }}</h2>
+
+      <v-timeline
+        ref="timeline"
+        :style="timelineStyle"
+        align="start"
+        class="timeline"
+        side="end"
+      >
+        <v-timeline-item
+          v-for="(item, i) in releaseNotes"
+          :key="i"
+          :dot-color="item.funcVersion !== releaseNotes[i + 1]?.funcVersion ? '#ffc046' : '#40fff8'"
+          :size="item.isMajor ? 'default' : 'small'"
+        >
+          <template #opposite>
+            <ReleaseNoteVersionHeading
+              v-show="!$vuetify.display.smAndDown"
+              :item="item"
+              :previous-item="releaseNotes[i + 1]"
+              class="changelog-title"
+            />
+          </template>
+          <div class="d-flex flex-column">
+            <ReleaseNoteVersionHeading
+              v-show="$vuetify.display.smAndDown"
+              class="changelog-title--mobile"
+              :item="item"
+              :previous-item="releaseNotes[i + 1]"
+            />
+            <div
+              style="font-size: 0.9em; margin-top: -8px"
+              v-html="marked.parse(item.content)"
+            />
+          </div>
+        </v-timeline-item>
+
+        <div
+          v-show="!timelineExpanded && timeline && timeline.$el.scrollHeight >= 600"
+          class="show-more-blur"
+        >
+          <v-btn
+            class="mb-4 show-more-blur__btn"
+            color="primary"
+            variant="flat"
+            width="200px"
+            @click="timelineExpanded = true"
+          >
+            すべて表示
+          </v-btn>
+        </div>
+      </v-timeline>
+    </section>
+
+    <section>
+      <h2>{{ tx("releaseNotesPage.legends") }}</h2>
+      <v-table>
+        <thead>
+          <tr>
+            <th>{{ tx("releaseNotesPage.color") }}</th>
+            <th>{{ tx("releaseNotesPage.desc") }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div style="background: #ffc046; width: 20px; height: 20px; border-radius: 50%" />
+            </td>
+            <td>{{ tx("releaseNotesPage.orangeDesc") }}</td>
+          </tr>
+          <tr>
+            <td>
+              <div style="background: #40fff8; width: 20px; height: 20px; border-radius: 50%" />
+            </td>
+            <td>{{ tx("releaseNotesPage.lightBlueDesc") }}</td>
+          </tr>
+        </tbody>
+      </v-table>
+    </section>
+  </div>
+</template>
+
+<style scoped>
+
+</style>
