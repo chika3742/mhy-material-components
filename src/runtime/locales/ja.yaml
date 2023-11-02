@@ -23,6 +23,12 @@ footer:
     light: ライト
     dark: ダーク
 
+characterFilterMenu:
+  possessionStatus: 所持状況
+  owned: 所持
+  notOwned: 未所持
+  rarity: レアリティ
+
 releaseNotesPage:
   legends: 凡例
   color: 色

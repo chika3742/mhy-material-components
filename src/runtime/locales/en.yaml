@@ -23,6 +23,12 @@ footer:
     light: Light
     dark: Dark
 
+characterFilterMenu:
+  possessionStatus: Possession Status
+  owned: Owned
+  notOwned: Not Owned
+  rarity: Rarity
+
 releaseNotesPage:
   legends: Legends
   color: Color

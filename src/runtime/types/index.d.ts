@@ -33,3 +33,16 @@ interface ReleaseNote {
    */
   isMajor: boolean;
 }
+
+interface FilterOption {
+  key: string
+  titleI18nKey: string
+  items: {
+    icon: string
+    invertIconColor?: boolean
+    textI18nKey: string
+    value: string
+  }[]
+}
+
+type PossessionStatus = "owned" | "notOwned"
