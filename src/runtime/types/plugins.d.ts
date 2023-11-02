@@ -8,7 +8,7 @@ declare module "#app" {
   }
 }
 
-declare module "vue" {
+declare module "@vue/runtime-core" {
   interface ComponentCustomProperties extends Plugins {
   }
 }
