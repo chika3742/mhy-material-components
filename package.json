@@ -36,7 +36,7 @@
     "@rollup/plugin-yaml": "^4.1.2",
     "defu": "^6.1.2",
     "js-yaml": "^4.1.0",
-    "marked": "^9.1.4",
+    "marked": "^10.0.0",
     "sass": "^1.69.5",
     "vuetify": "^3.3.20"
   },
