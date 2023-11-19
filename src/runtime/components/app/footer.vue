@@ -79,7 +79,7 @@
                 v-for="lang in availableLocales"
                 :key="lang.code"
                 :active="$i18n.locale === lang.code"
-                :href="switchLocalePath(lang.code)"
+                @click="$i18n.setLocale(lang.code)"
               >
                 <v-list-item-title>{{ lang.name }}</v-list-item-title>
               </v-list-item>
