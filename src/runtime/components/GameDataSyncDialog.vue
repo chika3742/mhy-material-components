@@ -36,7 +36,7 @@ const uid = ref("")
 const disableExpandTransition = ref(false)
 
 const emitGetData = () => {
-  if (validate(uid.value) !== true) {
+  if (uid.value === "" || validate(uid.value) !== true) {
     return
   }
 
@@ -77,6 +77,7 @@ watch(toRefs(props).modelValue, (value) => {
           :disabled="loading"
           :rules="[validate]"
           label="UID"
+          @keyup.enter="emitGetData"
         />
 
         <v-slide-x-transition
