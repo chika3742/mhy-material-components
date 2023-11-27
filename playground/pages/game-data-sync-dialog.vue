@@ -12,6 +12,7 @@ const obtainedUser = ref<UserInfoResponse | undefined>(undefined)
 const testShowcaseCharacter: ShowcaseCharacter = {
   nameJP: "三月なのか",
   level: 80,
+  rank: 3,
   promotion: 6,
   equipment: {
     nameJP: "",
@@ -22,22 +23,26 @@ const testShowcaseCharacter: ShowcaseCharacter = {
     {
       type: "Normal",
       iconUrl: "https://raw.githubusercontent.com/Mar-7th/StarRailRes/master/icon/skill/1001_basic_atk.png",
-      level: 10,
+      originalLevel: 7,
+      extraLevel: 1,
     },
     {
       type: "BPSkill",
       iconUrl: "https://raw.githubusercontent.com/Mar-7th/StarRailRes/master/icon/skill/1001_skill.png",
-      level: 6,
+      originalLevel: 8,
+      extraLevel: 0,
     },
     {
       type: "Talent",
       iconUrl: "https://raw.githubusercontent.com/Mar-7th/StarRailRes/master/icon/skill/1001_talent.png",
-      level: 7,
+      originalLevel: 9,
+      extraLevel: 2,
     },
     {
       type: "Ultra",
       iconUrl: "https://raw.githubusercontent.com/Mar-7th/StarRailRes/master/icon/skill/1001_ultimate.png",
-      level: 9,
+      originalLevel: 10,
+      extraLevel: 0,
     },
   ],
 }
@@ -62,7 +67,7 @@ const getData = (uid: string) => {
     obtainedUser.value = exampleUser
     obtainedUser.value.uid = uid
     loading.value = false
-  }, 3000)
+  }, 1000)
 }
 </script>
 

@@ -134,7 +134,14 @@ watch(toRefs(props).modelValue, (value) => {
                   </div>
                   <p>
                     <span style="font-size: 0.8em">Lv.</span>
-                    <span class="font-weight-bold">{{ skill.level }}</span>
+                    <span class="font-weight-bold">{{ skill.originalLevel }}</span>
+                    <span
+                      v-if="skill.extraLevel > 0"
+                      style="font-size: 0.8em"
+                    >
+                      <span>+</span>
+                      <span>{{ skill.extraLevel }}</span>
+                    </span>
                   </p>
                 </div>
               </div>

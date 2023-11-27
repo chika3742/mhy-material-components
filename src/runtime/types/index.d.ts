@@ -50,6 +50,7 @@ type PossessionStatus = "owned" | "notOwned"
 interface ShowcaseCharacter {
   nameJP: string
   level: number
+  rank: number
   promotion: number
   equipment: {
     nameJP: string
@@ -59,7 +60,8 @@ interface ShowcaseCharacter {
   skills: {
     type: "Normal" | "BPSkill" | "Ultra" | "Talent"
     iconUrl: string
-    level: number
+    originalLevel: number
+    extraLevel: number
   }[]
 }
 
