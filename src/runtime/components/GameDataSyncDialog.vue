@@ -147,7 +147,7 @@ watch(toRefs(props).modelValue, (value) => {
                   height="45px"
                 />
                 <div class="d-flex flex-column">
-                  <h4>{{ tx(`${equipmentI18nKey}.${getters.getCharacterId(character.nameJP)}`) }}</h4>
+                  <h4>{{ tx(`${equipmentI18nKey}.${getters.getEquipmentId(character.equipment.nameJP)}`) }}</h4>
                   <p>
                     <span style="font-size: 0.8em">Lv.</span>
                     <span class="font-weight-bold">{{ character.level }}</span>
