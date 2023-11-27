@@ -1,3 +1,7 @@
+common:
+  cancel: キャンセル
+  ok: OK
+
 pityCounter:
   title: Pity Counter
 

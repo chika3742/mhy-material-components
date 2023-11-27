@@ -46,3 +46,33 @@ interface FilterOption {
 }
 
 type PossessionStatus = "owned" | "notOwned"
+
+interface ShowcaseCharacter {
+  nameJP: string
+  level: number
+  promotion: number
+  equipment: {
+    nameJP: string
+    level: number
+    promotion: number
+  }
+  skills: {
+    type: "Normal" | "BPSkill" | "Ultra" | "Talent"
+    iconUrl: string
+    level: number
+  }[]
+}
+
+interface UserInfoResponse {
+  uid: string
+  nickname: string
+  level: number
+  characters: ShowcaseCharacter[]
+}
+
+interface DataSyncMapGetters {
+  getCharacterId: (characterName: string) => string
+  getCharacterImage: (characterId: string) => string
+  getEquipmentId: (equipmentName: string) => string
+  getEquipmentImage: (equipmentId: string) => string
+}

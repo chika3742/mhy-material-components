@@ -5,6 +5,10 @@ import {withCssExtension} from "./utils/with-css-extension"
 // Module options TypeScript interface definition
 export interface ModuleOptions {
   injectVuetify?: boolean
+  i18nKeys: {
+    equipment: string
+    extension: string
+  }
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -15,9 +19,17 @@ export default defineNuxtModule<ModuleOptions>({
   // Default configuration options of the Nuxt module
   defaults: {
     injectVuetify: true,
+    i18nKeys: {
+      equipment: "weapons",
+      extension: "artifacts",
+    },
   },
   async setup(options, nuxt) {
     const resolver = createResolver(import.meta.url)
+
+    nuxt.options.runtimeConfig.public.mmc = {
+      i18nKeys: options.i18nKeys,
+    }
 
     nuxt.options.vite.plugins ||= []
     nuxt.options.vite.plugins.push(yaml({
