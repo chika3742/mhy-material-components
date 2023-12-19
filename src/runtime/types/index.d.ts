@@ -49,6 +49,7 @@ type PossessionStatus = "owned" | "notOwned"
 
 interface ShowcaseCharacter {
   nameJP: string
+  variant: string
   level: number
   rank: number
   promotion: number
