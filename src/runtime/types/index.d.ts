@@ -59,7 +59,7 @@ interface ShowcaseCharacter {
     promotion: number
   }
   skills: {
-    type: "Normal" | "BPSkill" | "Ultra" | "Talent"
+    type: string
     iconUrl: string
     originalLevel: number
     extraLevel: number
