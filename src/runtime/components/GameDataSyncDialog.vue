@@ -5,6 +5,7 @@ import {nextTick, ref, toRefs, useI18n, useRuntimeConfig, watch} from "#imports"
 interface Props {
   modelValue: boolean
   user?: UserInfoResponse | undefined
+  uid: string
   loading?: boolean | undefined
   getters: DataSyncMapGetters
 }
@@ -16,7 +17,9 @@ interface Emits {
 
   (e: "update:user", value: UserInfoResponse | undefined): void
 
-  (e: "getData", uid: string): void
+  (e: "update:uid", value: string): void
+
+  (e: "getData"): void
 
   (e: "import"): void
 }
@@ -32,17 +35,16 @@ const validate = (v: string) => {
   return !!v.match(/^[0-9]*$/) || tx(i18n, "gameDataSync.invalidUid")
 }
 
-const uid = ref("")
 const disableExpandTransition = ref(false)
 
 const emitGetData = () => {
-  if (uid.value === "" || validate(uid.value) !== true) {
+  if (props.uid === "" || validate(props.uid) !== true) {
     return
   }
 
   // clear user data
   emit("update:user", undefined)
-  emit("getData", uid.value)
+  emit("getData")
 }
 
 watch(toRefs(props).modelValue, (value) => {
@@ -70,16 +72,20 @@ watch(toRefs(props).modelValue, (value) => {
     >
       <template #text>
         <p>{{ tx("gameDataSync.desc") }}</p>
+
+        <!-- uid input field -->
         <v-text-field
-          v-model="uid"
+          :model-value="uid"
           class="my-2"
           autofocus
           :disabled="loading"
           :rules="[validate]"
           label="UID"
           @keyup.enter="emitGetData"
+          @update:model-value="$emit('update:uid', $event)"
         />
 
+        <!-- fetch result -->
         <v-slide-x-transition
           :disabled="disableExpandTransition"
         >
