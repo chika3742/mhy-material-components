@@ -153,7 +153,10 @@ watch(toRefs(props).modelValue, (value) => {
               </div>
 
               <!-- equipment -->
-              <div class="ml-8 d-flex align-center g-2">
+              <div
+                v-if="character.equipment"
+                class="ml-8 d-flex align-center g-2"
+              >
                 <v-img
                   :src="getters.getEquipmentImage(getters.getEquipmentId(character.equipment.nameJP))"
                   max-width="45px"

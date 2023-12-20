@@ -57,7 +57,7 @@ interface ShowcaseCharacter {
     nameJP: string
     level: number
     promotion: number
-  }
+  } | null
   skills: {
     type: string
     iconUrl: string
