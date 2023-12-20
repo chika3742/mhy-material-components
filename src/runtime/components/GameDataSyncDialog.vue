@@ -125,7 +125,7 @@ watch(toRefs(props).modelValue, (value) => {
               </div>
 
               <!-- skill levels -->
-              <div class="d-flex g-2">
+              <div class="d-flex g-2 flex-wrap">
                 <div
                   v-for="skill in character.skills"
                   :key="skill.type"
@@ -138,7 +138,7 @@ watch(toRefs(props).modelValue, (value) => {
                       height="25px"
                     />
                   </div>
-                  <p>
+                  <div class="text-no-wrap">
                     <span style="font-size: 0.8em">Lv.</span>
                     <span class="font-weight-bold">{{ skill.originalLevel }}</span>
                     <span
@@ -148,7 +148,7 @@ watch(toRefs(props).modelValue, (value) => {
                       <span>+</span>
                       <span>{{ skill.extraLevel }}</span>
                     </span>
-                  </p>
+                  </div>
                 </div>
               </div>
 

@@ -7,10 +7,12 @@ definePageMeta({
 
 const show = ref(false)
 const loading = ref(false)
+const uid = ref("")
 const obtainedUser = ref<UserInfoResponse | undefined>(undefined)
 
 const testShowcaseCharacter: ShowcaseCharacter = {
   nameJP: "三月なのか",
+  variant: "fire",
   level: 80,
   rank: 3,
   promotion: 6,
@@ -79,6 +81,7 @@ const getData = (uid: string) => {
     />
     <GameDataSyncDialog
       v-model="show"
+      v-model:uid="uid"
       v-model:user="obtainedUser"
       :getters="getters"
       :loading="loading"
