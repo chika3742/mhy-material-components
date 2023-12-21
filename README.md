@@ -51,6 +51,14 @@ yarn dev:build
 yarn lint
 ```
 
+## I18n Keys
+
+Game-specific titles can be customized by setting the following i18n keys under `gameSpecific` property.
+
+| Key             | Description                                               |
+|-----------------|-----------------------------------------------------------|
+| `showcaseTitle` | Title of the character showcase (e.g. Character Showcase) |
+
 <!-- Links -->
 [genshin-material-repo-url]: https://github.com/chika3742/genshin-material
 [hsr-material-repo-url]: https://github.com/chika3742/hsr-material

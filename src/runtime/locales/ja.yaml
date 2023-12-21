@@ -39,7 +39,7 @@ releaseNotesPage:
 gameDataSync:
   title: ゲームデータ同期
   subtitle: ゲーム内での育成状況を反映します。
-  desc: ゲーム内の「キャラクターラインナップ」に登録したキャラクターの育成状況を、UIDだけで本アプリに反映させることができます。
+  desc: ゲーム内の「@:{'gameSpecific.showcaseTitle'}」に登録したキャラクターの育成状況を、UIDだけで本アプリに反映させることができます。
   invalidUid: 数字で入力してください。
   next: 次へ
   import: インポート

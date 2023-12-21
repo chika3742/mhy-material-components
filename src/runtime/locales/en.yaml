@@ -39,7 +39,7 @@ releaseNotesPage:
 gameDataSync:
   title: Game Data Sync
   subtitle: Reflects in-game training status
-  desc: The leveling status of characters registered in the in-game "Character Lineup" can be reflected in this application using only UID.
+  desc: The leveling status of characters registered in the in-game "@:{'gameSpecific.showcaseTitle'}" can be reflected in this application using only UID.
   invalidUid: Please enter in numbers.
   next: Next
   import: Import
