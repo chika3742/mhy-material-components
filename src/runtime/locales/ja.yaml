@@ -43,3 +43,4 @@ gameDataSync:
   invalidUid: 数字で入力してください。
   next: 次へ
   import: インポート
+  help: ヘルプ

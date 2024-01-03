@@ -2,6 +2,9 @@ common:
   cancel: キャンセル
   ok: OK
 
+gameSpecific:
+  showcaseTitle: キャラクターラインナップ
+
 pityCounter:
   title: Pity Counter
 
