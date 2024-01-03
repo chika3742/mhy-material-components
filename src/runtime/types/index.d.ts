@@ -74,8 +74,8 @@ interface UserInfoResponse {
 }
 
 interface DataSyncMapGetters {
-  getCharacterId: (characterName: string) => string
-  getCharacterImage: (characterId: string) => string
+  getCharacterId: (character: ShowcaseCharacter) => string
+  getCharacterImage: (character: ShowcaseCharacter) => string
   getEquipmentId: (equipmentName: string) => string
   getEquipmentImage: (equipmentId: string) => string
 }

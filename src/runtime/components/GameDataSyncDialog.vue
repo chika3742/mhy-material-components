@@ -124,12 +124,12 @@ const showHelpDialog = ref(false)
                 <!-- header -->
                 <div class="d-flex g-2 align-center">
                   <v-img
-                    :src="getters.getCharacterImage(getters.getCharacterId(character.nameJP))"
+                    :src="getters.getCharacterImage(character)"
                     max-width="50px"
                     height="50px"
                   />
                   <div class="d-flex flex-column">
-                    <h4>{{ tx(`characterNames.${getters.getCharacterId(character.nameJP)}`) }}</h4>
+                    <h4>{{ tx(`characterNames.${getters.getCharacterId(character)}`) }}</h4>
                     <p>
                       <span style="font-size: 0.8em">Lv.</span>
                       <span class="font-weight-bold">{{ character.level }}</span>
