@@ -29,7 +29,7 @@ const isOpen = computed({
     v-model="isOpen"
   >
     <v-list
-      v-safe-area="{left: 8, top: false, right: false, bottom: false}"
+      v-safe-area="{left: 8, right: false, bottom: false}"
       nav
     >
       <template v-for="(item, i) in drawerItems">
