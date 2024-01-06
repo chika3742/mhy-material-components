@@ -1,6 +1,6 @@
 import {Directive} from "vue"
 import {defineNuxtPlugin} from "#imports"
-import {clone, defaults} from "lodash"
+import * as _ from "lodash-es"
 
 export default defineNuxtPlugin(({vueApp}) => {
   interface SafeAreaOptions {
@@ -32,8 +32,8 @@ export default defineNuxtPlugin(({vueApp}) => {
 
   vueApp.directive("safe-area", <Directive<HTMLElement, SafeAreaOptions>>{
     mounted(el, binding) {
-      const params = clone(binding.value)
-      defaults(params, {
+      const params = _.clone(binding.value)
+      _.defaults(params, {
         top: false,
         right: false,
         bottom: false,

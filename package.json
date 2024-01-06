@@ -36,7 +36,7 @@
     "@rollup/plugin-yaml": "^4.1.2",
     "defu": "^6.1.2",
     "js-yaml": "^4.1.0",
-    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
     "marked": "^9.1.4",
     "sass": "^1.69.5",
     "vuetify": "^3.3.20"
@@ -48,7 +48,7 @@
     "@nuxt/schema": "^3.5.2",
     "@nuxt/test-utils": "^3.7.4",
     "@types/js-yaml": "^4.0.7",
-    "@types/lodash": "^4.14.202",
+    "@types/lodash-es": "^4.17.12",
     "@types/marked": "^6.0.0",
     "@types/node": "^20",
     "@vue/language-server": "^1.8.19",
