@@ -5,7 +5,7 @@
     class="flex-grow-0"
   >
     <div
-      v-safe-area="{top: false}"
+      v-safe-area="{left: true, bottom: true, right: true}"
       class="d-flex flex-column w-100"
     >
       <div class="d-flex align-center justify-end flex-wrap mb-4">
