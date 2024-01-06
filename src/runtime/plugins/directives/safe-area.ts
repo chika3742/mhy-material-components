@@ -1,6 +1,6 @@
 import {Directive} from "vue"
 import {defineNuxtPlugin} from "#imports"
-import _ from "lodash"
+import * as _ from "lodash"
 
 export default defineNuxtPlugin(({vueApp}) => {
   interface SafeAreaOptions {
