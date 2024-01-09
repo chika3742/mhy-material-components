@@ -11,6 +11,12 @@ type Divider = "---"
 
 type DrawerItemOrDivider = DrawerItem | Divider
 
+interface BottomNavigationItem {
+  icon: string
+  titleI18nKey: string
+  path: string
+}
+
 interface ReleaseNote {
   /**
    * リリース日
