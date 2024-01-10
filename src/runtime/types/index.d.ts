@@ -13,7 +13,7 @@ type DrawerItemOrDivider = DrawerItem | Divider
 
 interface BottomNavigationItem {
   icon: string
-  titleI18nKey: string
+  labelI18nKey: string
   path: string
 }
 

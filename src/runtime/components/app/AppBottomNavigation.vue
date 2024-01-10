@@ -29,7 +29,7 @@ defineEmits<Emits>()
       :class="modelValue === item.path ? 'selected' : ''"
     >
       <v-icon>{{ item.icon }}</v-icon>
-      <span>{{ tx(item.titleI18nKey) }}</span>
+      <span>{{ tx(item.labelI18nKey) }}</span>
     </v-btn>
   </v-bottom-navigation>
 </template>
