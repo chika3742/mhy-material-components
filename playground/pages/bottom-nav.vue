@@ -8,12 +8,12 @@ definePageMeta({
 const items: BottomNavigationItem[] = [
   {
     icon: "mdi-home",
-    titleI18nKey: "home",
+    titleI18nKey: "ブックマーク",
     path: "/home",
   },
   {
     icon: "mdi-history",
-    titleI18nKey: "recents",
+    titleI18nKey: "データベース",
     path: "/recents",
   },
   {
