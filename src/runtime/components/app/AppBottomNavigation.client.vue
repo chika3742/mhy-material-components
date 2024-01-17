@@ -9,6 +9,7 @@ defineProps<Props>()
 
 interface Emits {
   (e: "update:modelValue", value: string): void
+  (e: "click-item-twice", value: string): void
 }
 defineEmits<Emits>()
 
@@ -29,6 +30,7 @@ defineEmits<Emits>()
       :value="item.path"
       class="bottom-nav__btn"
       :class="modelValue === item.path ? 'selected' : ''"
+      @click="modelValue === item.path && $emit('click-item-twice', item.path)"
     >
       <v-icon>{{ item.icon }}</v-icon>
       <span>{{ tx(item.labelI18nKey) }}</span>
