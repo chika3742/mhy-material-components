@@ -18,14 +18,16 @@ defineEmits<Emits>()
   <v-bottom-navigation
     :model-value="modelValue"
     color="primary"
+    class="bottom-nav"
     mandatory
     @update:model-value="$emit('update:modelValue', $event)"
   >
     <v-btn
       v-for="item in items"
       :key="item.path"
+      v-safe-area="{bottom: true}"
       :value="item.path"
-      class="bottom-nav-btn"
+      class="bottom-nav__btn"
       :class="modelValue === item.path ? 'selected' : ''"
     >
       <v-icon>{{ item.icon }}</v-icon>
@@ -35,10 +37,13 @@ defineEmits<Emits>()
 </template>
 
 <style lang="sass" scoped>
-.bottom-nav-btn
-  flex: 1
-  word-break: keep-all
+.bottom-nav
+  height: calc(env(safe-area-inset-bottom) + 56px)
 
-  &.selected
-    flex: 1.2
+  &__btn
+    flex: 1
+    word-break: keep-all
+
+    &.selected
+      flex: 1.2
 </style>
