@@ -38,7 +38,7 @@ defineEmits<Emits>()
 
 <style lang="sass" scoped>
 .bottom-nav
-  height: calc(env(safe-area-inset-bottom) + 56px)
+  height: calc(env(safe-area-inset-bottom) + 56px) !important
 
   &__btn
     flex: 1
