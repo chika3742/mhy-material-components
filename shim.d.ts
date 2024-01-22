@@ -1,5 +1,5 @@
-import {VueI18n} from "vue-i18n"
-import {RouteLocationRaw} from "vue-router"
+import type {VueI18n} from "vue-i18n"
+import type {RouteLocationRaw} from "vue-router"
 
 declare module "@vue/runtime-core" {
   interface ComponentCustomProperties {

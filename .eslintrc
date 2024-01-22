@@ -5,6 +5,7 @@
     "eslint-config-nuxt"
   ],
   "parserOptions": {
-    "project": true
+    "project": true,
+    "parser": "@typescript-eslint/parser"
   }
 }

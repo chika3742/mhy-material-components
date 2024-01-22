@@ -31,6 +31,7 @@ export default defineNuxtModule<ModuleOptions>({
       i18nKeys: options.i18nKeys as Required<Required<ModuleOptions>["i18nKeys"]>,
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     nuxt.options.vite.plugins ||= []
     nuxt.options.vite.plugins.push(yaml({
       include: resolver.resolve("./runtime/locales/*.yaml"),

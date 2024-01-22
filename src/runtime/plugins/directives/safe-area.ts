@@ -1,4 +1,4 @@
-import {Directive} from "vue"
+import type {Directive} from "vue"
 import {defineNuxtPlugin} from "#imports"
 import * as _ from "lodash-es"
 

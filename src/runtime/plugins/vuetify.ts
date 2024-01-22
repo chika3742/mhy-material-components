@@ -1,9 +1,11 @@
-import {createVuetify, IconProps} from "vuetify"
+import type {IconProps} from "vuetify"
+import {createVuetify} from "vuetify"
 import * as components from "vuetify/components"
 import * as directives from "vuetify/directives"
 import "@mdi/font/css/materialdesignicons.css"
 import "vuetify/lib/styles/main.sass"
-import {FunctionalComponent, h} from "vue"
+import type {FunctionalComponent} from "vue"
+import {h} from "vue"
 import {defineNuxtPlugin} from "#app"
 
 export default defineNuxtPlugin((nuxtApp) => {
