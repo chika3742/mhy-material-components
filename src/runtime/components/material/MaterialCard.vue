@@ -223,21 +223,19 @@ const farmingCount = computed(() => {
   </v-card>
 </template>
 
-<style lang="scss" scoped>
-.rarity-marker {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 0 16px 16px;
-  border-color: transparent transparent transparent v-bind(markerColorCss);
-  z-index: 1;
-  pointer-events: none;
-}
+<style lang="sass" scoped>
+.rarity-marker
+  position: absolute
+  top: 0
+  left: 0
+  width: 0
+  height: 0
+  border-style: solid
+  border-width: 0 0 16px 16px
+  border-color: transparent transparent transparent v-bind(markerColorCss)
+  z-index: 1
+  pointer-events: none
 
-.dimmed {
-  opacity: 0.5;
-}
+.dimmed
+  opacity: 0.5
 </style>

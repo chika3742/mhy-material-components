@@ -120,10 +120,9 @@ const setFilter = (key: keyof Props["filter"], value: string[]) => {
   </v-menu>
 </template>
 
-<style lang="scss" scoped>
-h4 {
-  padding: 4px 16px 0;
-  margin-top: 8px;
-  font-weight: bold;
-}
+<style lang="sass" scoped>
+h4
+  padding: 4px 16px 0
+  margin-top: 8px
+  font-weight: bold
 </style>

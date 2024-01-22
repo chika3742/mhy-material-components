@@ -54,38 +54,30 @@ defineEmits<Emits>()
   </div>
 </template>
 
-<style scoped lang="scss">
-.material-card-action-container {
-  height: 100%;
-  min-height: v-bind(height);
-  min-width: 40px;
-  width: auto;
-  padding: 0 8px;
+<style scoped lang="sass">
+.material-card-action-container
+  height: 100%
+  min-height: v-bind(height)
+  min-width: 40px
+  width: auto
+  padding: 0 8px
+  &.compact
+    width: 35px
+    min-width: 35px
 
-  &.compact {
-    width: 35px;
-    min-width: 35px;
-  }
+  &.loading, &.disabled
+    pointer-events: none
 
-  &.loading, &.disabled {
-    pointer-events: none;
-  }
+  &.disabled
+    opacity: 0.5
 
-  &.disabled {
-    opacity: 0.5;
-  }
-}
-
-.hover-overlay {
-  background-color: currentColor;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  &:hover {
-    opacity: calc(var(--v-hover-opacity) * var(--v-theme-overlay-multiplier));
-  }
-}
+.hover-overlay
+  background-color: currentColor
+  position: absolute
+  width: 100%
+  height: 100%
+  opacity: 0
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1)
+  &:hover
+    opacity: calc(var(--v-hover-opacity) * var(--v-theme-overlay-multiplier))
 </style>
