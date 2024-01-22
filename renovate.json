@@ -5,6 +5,7 @@
   ],
   "timezone": "Asia/Tokyo",
   "dependencyDashboard": false,
+  "prConcurrentLimit": 0,
   "packageRules": [
     {
       "matchFileNames": [

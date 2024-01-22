@@ -10,5 +10,6 @@
   "devDependencies": {
     "@nuxtjs/i18n": "^8.0.0-rc.5",
     "nuxt": "^3.7.4"
-  }
+  },
+  "packageManager": "yarn@4.0.2"
 }

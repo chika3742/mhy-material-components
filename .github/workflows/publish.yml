@@ -17,9 +17,7 @@ jobs:
         with:
           node-version: 20
 
-      - uses: oven-sh/setup-bun@v1
-
-      - run: bun install --frozen-lockfile
+      - run: yarn install
 
       - name: Bump version
         run: |
@@ -27,7 +25,7 @@ jobs:
           git config user.email github-actions@github.com
           npm version patch -m "chore: bump version to v%s"
 
-      - run: npm publish
+      - run: yarn npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
