@@ -41,6 +41,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
     if (options.injectVuetify) {
+      nuxt.options.build.transpile.push("vuetify")
       addPlugin(resolver.resolve("./runtime/plugins/vuetify"))
     }
 
