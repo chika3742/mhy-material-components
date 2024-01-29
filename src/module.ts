@@ -5,6 +5,14 @@ import {withCssExtension} from "./utils/with-css-extension"
 // Module options TypeScript interface definition
 export interface ModuleOptions {
   injectVuetify?: boolean
+  theme?: {
+    light: {
+      primary: string
+    }
+    dark: {
+      primary: string
+    }
+  }
   i18nKeys?: {
     equipment?: string
     extension?: string
@@ -19,6 +27,14 @@ export default defineNuxtModule<ModuleOptions>({
   // Default configuration options of the Nuxt module
   defaults: {
     injectVuetify: true,
+    theme: {
+      dark: {
+        primary: "#80CBC4",
+      },
+      light: {
+        primary: "#00796B",
+      },
+    },
     i18nKeys: {
       equipment: "weapons",
       extension: "artifacts",
@@ -28,6 +44,7 @@ export default defineNuxtModule<ModuleOptions>({
     const resolver = createResolver(import.meta.url)
 
     nuxt.options.runtimeConfig.public.mmc = {
+      theme: options.theme,
       i18nKeys: options.i18nKeys as Required<Required<ModuleOptions>["i18nKeys"]>,
     }
 

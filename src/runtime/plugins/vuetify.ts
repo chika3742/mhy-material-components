@@ -7,17 +7,22 @@ import "vuetify/lib/styles/main.sass"
 import type {FunctionalComponent} from "vue"
 import {h} from "vue"
 import {defineNuxtPlugin} from "#app"
+import invert from "invert-color"
 
 export default defineNuxtPlugin((nuxtApp) => {
+  const options = nuxtApp.$config.public.mmc
+
   const vuetify = createVuetify({
     components,
     directives,
     theme: {
+      defaultTheme: "dark",
       themes: {
         dark: {
           dark: true,
           colors: {
-            primary: "#ee8411",
+            primary: options.theme.dark.primary,
+            "inverse-primary": invert(options.theme.dark.primary),
             star: "#ffff00",
             "button-activated": "#d24700",
             "rarity-5": "#f1931d",
@@ -33,8 +38,8 @@ export default defineNuxtPlugin((nuxtApp) => {
         light: {
           dark: false,
           colors: {
-            primary: "#008cff",
-            secondary: "#4CAF50",
+            primary: options.theme.light.primary,
+            "inverse-primary": invert(options.theme.light.primary),
             star: "#ff8c00",
             "button-activated": "#ff5900",
             "rarity-5": "#f1931d",
