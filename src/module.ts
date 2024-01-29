@@ -44,7 +44,7 @@ export default defineNuxtModule<ModuleOptions>({
     const resolver = createResolver(import.meta.url)
 
     nuxt.options.runtimeConfig.public.mmc = {
-      theme: options.theme,
+      theme: options.theme!,
       i18nKeys: options.i18nKeys as Required<Required<ModuleOptions>["i18nKeys"]>,
     }
 
