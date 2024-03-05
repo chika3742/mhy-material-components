@@ -56,7 +56,7 @@
     "eslint": "^8.51.0",
     "eslint-config-nuxt": "github:chika3742/eslint-config-nuxt",
     "nuxt": "^3.7.4",
-    "vitest": "^0.34.6"
+    "vitest": "^1.0.0"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
