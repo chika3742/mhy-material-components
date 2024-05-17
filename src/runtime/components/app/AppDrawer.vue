@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import {useDisplay} from "vuetify"
 import {computed} from "#imports"
 
 const props = defineProps<{
@@ -11,11 +10,9 @@ const emit = defineEmits<{
   (e: "update:modelValue", value: boolean): void
 }>()
 
-const display = useDisplay()
-
 const isOpen = computed({
   get() {
-    return display.mobile.value ? props.modelValue : true
+    return props.modelValue
   },
   set(value: boolean) {
     emit("update:modelValue", value)
