@@ -13,6 +13,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   const options = nuxtApp.$config.public.mmc
 
   const vuetify = createVuetify({
+    ssr: true,
     components,
     directives,
     theme: {

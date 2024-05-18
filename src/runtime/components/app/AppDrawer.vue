@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {useDisplay} from "vuetify"
-import {computed} from "#imports"
+import {onMounted} from "#imports"
 
 const props = defineProps<{
   modelValue: boolean
@@ -13,20 +13,20 @@ const emit = defineEmits<{
 
 const display = useDisplay()
 
-const isOpen = computed({
-  get() {
-    return display.mobile.value ? props.modelValue : true
-  },
-  set(value: boolean) {
-    emit("update:modelValue", value)
-  },
+onMounted(() => {
+  if (!display.mobile.value) {
+    setTimeout(() => {
+      emit("update:modelValue", true)
+    })
+  }
 })
 
 </script>
 
 <template>
   <v-navigation-drawer
-    v-model="isOpen"
+    :model-value="modelValue"
+    @update:model-value="$emit('update:modelValue', $event)"
   >
     <div v-safe-area="{top: true, left: true}">
       <v-list nav>
