@@ -208,7 +208,10 @@ const farmingCount = computed(() => {
       </MaterialCardAction>
     </div>
 
-    <div class="rarity-marker" />
+    <div
+      class="rarity-marker"
+      :style="`border-color: transparent transparent transparent ${markerColorCss}`"
+    />
 
     <client-only>
       <v-tooltip
@@ -232,7 +235,6 @@ const farmingCount = computed(() => {
   height: 0
   border-style: solid
   border-width: 0 0 16px 16px
-  border-color: transparent transparent transparent v-bind(markerColorCss)
   z-index: 1
   pointer-events: none
 
