@@ -483,7 +483,7 @@ __metadata:
     invert-color: "npm:^2.0.0"
     js-yaml: "npm:^4.1.0"
     lodash-es: "npm:^4.17.21"
-    marked: "npm:^11.0.0"
+    marked: "npm:^12.0.0"
     nuxt: "npm:^3.11.2"
     sass: "npm:^1.77.2"
     vitest: "npm:^0.34.6"
@@ -7413,12 +7413,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"marked@npm:*, marked@npm:^11.0.0":
+"marked@npm:*":
   version: 11.1.1
   resolution: "marked@npm:11.1.1"
   bin:
     marked: bin/marked.js
   checksum: 77137491bb9610ceaa42a2f487ea00ec13836f19c3d41cabb80f16b283461a1d14285de42725c09d8a2fb029ae10633b07e76afc76113c8067e68eaedfdf8bf6
+  languageName: node
+  linkType: hard
+
+"marked@npm:^12.0.0":
+  version: 12.0.2
+  resolution: "marked@npm:12.0.2"
+  bin:
+    marked: bin/marked.js
+  checksum: 45ae2e1e3f06b30a5b5f64efc6cde9830c81d1d024fd7668772a3217f1bc0f326e66a6b8970482d9783edf1f581fecac7023a7fa160f2c14dbcc16e064b4eafb
   languageName: node
   linkType: hard
 
