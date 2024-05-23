@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {definePageMeta, ref, watch} from "#imports"
+import { definePageMeta, ref, watch } from "#imports"
 
 definePageMeta({
   title: "Character Filter Menu",

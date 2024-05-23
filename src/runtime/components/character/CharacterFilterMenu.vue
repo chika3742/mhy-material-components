@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {tx} from "../../utils/i18n"
+import { tx } from "../../utils/i18n"
 
 interface Props {
   filter: { [key in "possessionStatus" | "rarity" | string]: string[] }

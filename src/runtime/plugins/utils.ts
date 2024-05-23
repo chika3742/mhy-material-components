@@ -1,4 +1,4 @@
-import {defineNuxtPlugin, useRouter} from "#imports"
+import { defineNuxtPlugin, useRouter } from "#imports"
 
 export default defineNuxtPlugin((nuxt) => {
   const router = useRouter()

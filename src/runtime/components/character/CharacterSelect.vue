@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import {computed, onMounted, ref, useI18n, useRoute} from "#imports"
+import { computed, onMounted, ref, useI18n, useRoute } from "#imports"
 
 interface Props {
   modelValue: string | undefined
@@ -46,7 +46,7 @@ const vSelectItems = computed(() => {
 const toggleFilterDisabled = () => {
   isFilterDisabled.value = !isFilterDisabled.value
 
-  if (props.modelValue && !vSelectItems.value.some(({value: id}) => props.modelValue === id)) {
+  if (props.modelValue && !vSelectItems.value.some(({ value: id }) => props.modelValue === id)) {
     emit("update:modelValue", vSelectItems.value[0].value)
   }
 }
@@ -54,7 +54,7 @@ const toggleFilterDisabled = () => {
 onMounted(() => {
   const filteredCharacters = (() => {
     if (props.filter) {
-      return props.characters.filter((e) => props.filter!(e.id))
+      return props.characters.filter(e => props.filter!(e.id))
     } else {
       return props.characters
     }
@@ -72,7 +72,6 @@ onMounted(() => {
     emit("update:modelValue", filteredCharacters[0].id)
   }
 })
-
 </script>
 
 <template>
@@ -81,12 +80,12 @@ onMounted(() => {
     :items="vSelectItems"
     :label="label"
     :model-value="modelValue"
-    :style="{'max-width': maxWidth}"
+    :style="{ 'max-width': maxWidth }"
     class="mt-2"
     @blur="$emit('update:error', '')"
     @update:model-value="$emit('update:modelValue', $event)"
   >
-    <template #item="{props: _props, item}">
+    <template #item="{ props: _props, item }">
       <v-list-item
         :title="item.title"
         v-bind="_props"

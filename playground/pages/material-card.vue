@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {definePageMeta, ref, watch} from "#imports"
+import { definePageMeta, ref, watch } from "#imports"
 
 definePageMeta({
   title: "MaterialCard",
@@ -45,8 +45,8 @@ watch(loading, (_loading) => {
       bookmark-state="none"
       :quantity="100"
       :rarity="() => 3"
-      @toggle-bookmark="() => {console.log('toggle-bookmark')}"
-      @re-bookmark="() => {console.log('re-bookmark')}"
+      @toggle-bookmark="() => { console.log('toggle-bookmark') }"
+      @re-bookmark="() => { console.log('re-bookmark') }"
     />
 
     <MaterialCard
@@ -56,8 +56,8 @@ watch(loading, (_loading) => {
       bookmark-state="partial"
       :exp-item-lineup="expItemLineup"
       is-exp-item
-      @toggle-bookmark="(selectedExpItemId) => {console.log('toggle-bookmark', selectedExpItemId)}"
-      @re-bookmark="(selectedExpItemId) => {console.log('re-bookmark', selectedExpItemId)}"
+      @toggle-bookmark="(selectedExpItemId) => { console.log('toggle-bookmark', selectedExpItemId) }"
+      @re-bookmark="(selectedExpItemId) => { console.log('re-bookmark', selectedExpItemId) }"
     />
 
     <MaterialCard
@@ -67,8 +67,8 @@ watch(loading, (_loading) => {
       :rarity="() => 5"
       bookmark-state="full"
       :farming-count="() => 5"
-      @toggle-bookmark="(selectedExpItemId) => {console.log('toggle-bookmark', selectedExpItemId)}"
-      @re-bookmark="() => {console.log('re-bookmark')}"
+      @toggle-bookmark="(selectedExpItemId) => { console.log('toggle-bookmark', selectedExpItemId) }"
+      @re-bookmark="() => { console.log('re-bookmark') }"
     />
 
     <MaterialCard

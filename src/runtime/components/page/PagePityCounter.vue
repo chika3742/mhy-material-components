@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import {useI18n} from "#imports"
+import { useI18n } from "#imports"
 
 interface Props {
 }
 
-const props = defineProps<Props>()
+defineProps<Props>()
 
 const i18n = useI18n()
 
@@ -13,8 +13,6 @@ const locs = {
     return i18n.t("pityCounter.title")
   },
 }
-
-
 </script>
 
 <template>

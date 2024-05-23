@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import {computed, ref} from "#imports"
-import {Marked} from "marked"
-import {tx} from "../../utils/i18n"
+import { Marked } from "marked"
+import { tx } from "../../utils/i18n"
+import { computed, ref } from "#imports"
 
 interface Props {
   releaseNotes: ReleaseNote[]

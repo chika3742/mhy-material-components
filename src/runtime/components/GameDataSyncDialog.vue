@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import {tx} from "../utils/i18n"
-import {nextTick, ref, toRefs, useI18n, useRuntimeConfig, watch} from "#imports"
+import { tx } from "../utils/i18n"
+import { nextTick, ref, toRefs, useI18n, useRuntimeConfig, watch } from "#imports"
 
 interface Props {
   modelValue: boolean
@@ -232,5 +232,4 @@ const showHelpDialog = ref(false)
 .skill-icon-container
   background: radial-gradient(closest-side, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 85%, rgba(0, 0, 0, 0))
   padding: 2px
-
 </style>

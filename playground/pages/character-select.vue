@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {definePageMeta, ref} from "#imports"
+import { definePageMeta, ref } from "#imports"
 
 definePageMeta({
   title: "CharacterSelect",
@@ -8,12 +8,12 @@ definePageMeta({
 const value = ref<string>()
 
 const characters = [
-  {id: "test1", image: "/_nuxt/assets/img/test_small.webp"},
-  {id: "test2", image: "/_nuxt/assets/img/test_small.webp"},
-  {id: "test3", image: "/_nuxt/assets/img/test_small.webp"},
-  {id: "test4", image: "/_nuxt/assets/img/test_small.webp"},
-  {id: "test5", image: "/_nuxt/assets/img/test_small.webp"},
-  {id: "test6", image: "/_nuxt/assets/img/test_small.webp"},
+  { id: "test1", image: "/_nuxt/assets/img/test_small.webp" },
+  { id: "test2", image: "/_nuxt/assets/img/test_small.webp" },
+  { id: "test3", image: "/_nuxt/assets/img/test_small.webp" },
+  { id: "test4", image: "/_nuxt/assets/img/test_small.webp" },
+  { id: "test5", image: "/_nuxt/assets/img/test_small.webp" },
+  { id: "test6", image: "/_nuxt/assets/img/test_small.webp" },
 ]
 </script>
 

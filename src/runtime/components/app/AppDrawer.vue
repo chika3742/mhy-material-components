@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import {useDisplay} from "vuetify"
-import {onMounted} from "#imports"
+import { useDisplay } from "vuetify"
+import { onMounted } from "#imports"
 
-const props = defineProps<{
+defineProps<{
   modelValue: boolean
   drawerItems: DrawerItemOrDivider[]
 }>()
@@ -20,7 +20,6 @@ onMounted(() => {
     })
   }
 })
-
 </script>
 
 <template>
@@ -28,7 +27,7 @@ onMounted(() => {
     :model-value="modelValue"
     @update:model-value="$emit('update:modelValue', $event)"
   >
-    <div v-safe-area="{top: true, left: true}">
+    <div v-safe-area="{ top: true, left: true }">
       <v-list nav>
         <template v-for="(item, i) in drawerItems">
           <v-list-item

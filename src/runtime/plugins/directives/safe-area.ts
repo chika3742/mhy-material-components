@@ -1,33 +1,33 @@
-import type {Directive} from "vue"
-import {defineNuxtPlugin} from "#imports"
+import type { Directive } from "vue"
 import * as _ from "lodash-es"
+import { defineNuxtPlugin } from "#imports"
 
-export default defineNuxtPlugin(({vueApp}) => {
+export default defineNuxtPlugin(({ vueApp }) => {
   interface SafeAreaOptions {
     /**
      * Whether to insert a safe area inset in the specific direction.
      * You can also specify a minimum value by passing a numerical value.
      * @default false
      */
-    top?: boolean | number,
+    top?: boolean | number
     /**
      * Whether to insert a safe area inset in the specific direction.
      * You can also specify a minimum value by passing a numerical value.
      * @default false
      */
-    right?: boolean | number,
+    right?: boolean | number
     /**
      * Whether to insert a safe area inset in the specific direction.
      * You can also specify a minimum value by passing a numerical value.
      * @default false
      */
-    bottom?: boolean | number,
+    bottom?: boolean | number
     /**
      * Whether to insert a safe area inset in the specific direction.
      * You can also specify a minimum value by passing a numerical value.
      * @default false
      */
-    left?: boolean | number,
+    left?: boolean | number
   }
 
   vueApp.directive("safe-area", <Directive<HTMLElement, SafeAreaOptions>>{

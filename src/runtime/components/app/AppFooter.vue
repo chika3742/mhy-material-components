@@ -5,7 +5,7 @@
     class="flex-grow-0"
   >
     <div
-      v-safe-area="{left: true, bottom: true, right: true}"
+      v-safe-area="{ left: true, bottom: true, right: true }"
       class="d-flex flex-column w-100"
     >
       <div class="d-flex align-center justify-end flex-wrap mb-4">
@@ -137,7 +137,7 @@
 </template>
 
 <script lang="ts" setup>
-import {computed, useI18n} from "#imports"
+import { computed, useI18n } from "#imports"
 
 interface Props {
   /**
@@ -173,12 +173,12 @@ defineEmits<Emits>()
 const i18n = useI18n()
 
 const availableLocales: { code: string, name: string }[] = [
-  {code: "ja", name: "日本語"},
-  {code: "en", name: "English"},
+  { code: "ja", name: "日本語" },
+  { code: "en", name: "English" },
 ]
 
 const feedbackUrl = computed(() => {
-  if (!process.client) {
+  if (!import.meta.client) {
     return ""
   }
 
@@ -204,5 +204,4 @@ const feedbackMenuItems = computed(() => {
     },
   ]
 })
-
 </script>
