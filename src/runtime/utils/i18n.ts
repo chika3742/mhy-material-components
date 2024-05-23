@@ -1,5 +1,5 @@
-import type {Composer} from "vue-i18n"
-import {useI18n} from "#imports"
+import type { Composer } from "vue-i18n"
+import { useI18n } from "#imports"
 
 type Tx = {
   (key: string, named?: Record<string, unknown>): string

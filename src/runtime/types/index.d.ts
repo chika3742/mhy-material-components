@@ -21,23 +21,23 @@ interface ReleaseNote {
   /**
    * リリース日
    */
-  date: string;
+  date: string
   /**
    * 機能バージョン
    */
-  funcVersion: string;
+  funcVersion: string
   /**
    * データバージョン
    */
-  dataVersion: string;
+  dataVersion: string
   /**
    * 更新内容
    */
-  content: string;
+  content: string
   /**
    * メジャーバージョンアップかどうか
    */
-  isMajor: boolean;
+  isMajor: boolean
 }
 
 interface FilterOption {

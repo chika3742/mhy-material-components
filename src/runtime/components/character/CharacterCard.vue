@@ -63,5 +63,4 @@ defineProps<{
     @media (max-width: 450px)
       font-size: 1em
       padding: 2px 8px
-
 </style>

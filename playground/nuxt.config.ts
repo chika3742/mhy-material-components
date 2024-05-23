@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
   modules: ["../src/module", "@nuxtjs/i18n", "@nuxt/eslint"],
-  devtools: {enabled: true},
+  devtools: { enabled: true },
   i18n: {
     locales: [
       {
@@ -17,6 +17,6 @@ export default defineNuxtConfig({
     config: {
       autoInit: false,
       stylistic: true,
-    }
-  }
+    },
+  },
 })

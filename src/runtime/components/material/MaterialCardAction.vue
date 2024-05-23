@@ -24,7 +24,7 @@ defineEmits<Emits>()
   <div
     v-ripple
     class="material-card-action-container d-flex align-center justify-center position-relative"
-    :class="{compact, loading, disabled}"
+    :class="{ compact, loading, disabled }"
     @click="$emit('click')"
   >
     <v-fade-transition leave-absolute>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {computed, ref, useNuxtApp} from "#imports"
+import { computed, ref, useNuxtApp } from "#imports"
 
 type ExpItemDef = {
   itemId: string
@@ -53,7 +53,7 @@ interface Emits {
 
 defineEmits<Emits>()
 
-const {$isTouchDevice} = useNuxtApp()
+const { $isTouchDevice } = useNuxtApp()
 
 if (props.isExpItem && props.expItemLineup.length === 0) {
   throw new Error("expItemLineup must not be empty")

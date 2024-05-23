@@ -1,6 +1,6 @@
-import {addComponentsDir, addPlugin, addTypeTemplate, createResolver, defineNuxtModule} from "@nuxt/kit"
+import { addComponentsDir, addPlugin, addTypeTemplate, createResolver, defineNuxtModule } from "@nuxt/kit"
 import yaml from "@rollup/plugin-yaml"
-import {withCssExtension} from "./utils/with-css-extension"
+import { withCssExtension } from "./utils/with-css-extension"
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {
@@ -48,7 +48,6 @@ export default defineNuxtModule<ModuleOptions>({
       i18nKeys: options.i18nKeys as Required<Required<ModuleOptions>["i18nKeys"]>,
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     nuxt.options.vite.plugins ||= []
     nuxt.options.vite.plugins.push(yaml({
       include: resolver.resolve("./runtime/locales/*.yaml"),

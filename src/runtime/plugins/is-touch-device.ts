@@ -1,10 +1,10 @@
-import {defineNuxtPlugin} from "#imports"
+import { defineNuxtPlugin } from "#imports"
 
 export default defineNuxtPlugin(() => {
   return {
     provide: {
       get isTouchDevice() {
-        if (process.server) {
+        if (import.meta.server) {
           return false
         }
         return "ontouchstart" in window || navigator.maxTouchPoints > 0

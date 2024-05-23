@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {tx} from "../../utils/i18n"
+import { tx } from "../../utils/i18n"
 
 interface Props {
   modelValue: string
@@ -12,7 +12,6 @@ interface Emits {
   (e: "click-item-twice", value: string): void
 }
 defineEmits<Emits>()
-
 </script>
 
 <template>
@@ -26,7 +25,7 @@ defineEmits<Emits>()
     <v-btn
       v-for="item in items"
       :key="item.path"
-      v-safe-area="{bottom: true}"
+      v-safe-area="{ bottom: true }"
       :value="item.path"
       class="bottom-nav__btn"
       :class="modelValue === item.path ? 'selected' : ''"

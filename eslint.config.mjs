@@ -27,6 +27,7 @@ const commonRules = {
   "no-useless-constructor": "off",
   "vue/multi-word-component-names": "off",
   "vue/no-v-html": "off",
+  "vue/return-in-computed-property": "off",
   "import/named": "off",
   "no-use-before-define": "off",
   "@typescript-eslint/ban-ts-comment": "off",
@@ -53,6 +54,7 @@ const commonRules = {
   "@typescript-eslint/no-unsafe-member-access": "off",
   "@typescript-eslint/no-explicit-any": "off",
   "@typescript-eslint/no-namespace": "off",
+  "@typescript-eslint/unified-signatures": "off",
 }
 
 export default withNuxt({

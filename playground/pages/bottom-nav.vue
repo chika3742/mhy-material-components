@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {definePageMeta, ref} from "#imports"
+import { definePageMeta, ref } from "#imports"
 
 definePageMeta({
   title: "Bottom Nav",
@@ -29,7 +29,6 @@ const items: BottomNavigationItem[] = [
 ]
 
 const currentPath = ref("")
-
 </script>
 
 <template>

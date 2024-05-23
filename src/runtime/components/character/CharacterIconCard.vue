@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import {computed, useI18n, useNuxtApp} from "#imports"
-import {toCharacterId, toVariant} from "../../utils/variant"
+import { toCharacterId, toVariant } from "../../utils/variant"
+import { computed, useI18n, useNuxtApp } from "#imports"
 
 const props = defineProps<{
   characterIdWithVariant: string
@@ -8,7 +8,7 @@ const props = defineProps<{
 }>()
 
 const i18n = useI18n()
-const {$isTouchDevice} = useNuxtApp()
+const { $isTouchDevice } = useNuxtApp()
 
 const characterName = computed(() => {
   return i18n.t(`characterNames.${props.characterIdWithVariant}`)
@@ -19,7 +19,7 @@ const characterName = computed(() => {
   <v-card
     :to="localePath({
       path: `/characters/${toCharacterId(characterIdWithVariant)}`,
-      query: {variant: toVariant(characterIdWithVariant) ?? undefined},
+      query: { variant: toVariant(characterIdWithVariant) ?? undefined },
     })"
     color="card"
   >

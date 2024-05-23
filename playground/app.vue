@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {ref, useRouter} from "#imports"
+import { ref, useRouter } from "#imports"
 
 const router = useRouter()
 
@@ -12,7 +12,7 @@ interface DrawerItem {
 
 const drawerItems = router.getRoutes()
   .filter(e => e.meta.title && !e.path.startsWith("/en/"))
-  .map<DrawerItem>((e) => ({
+  .map<DrawerItem>(e => ({
     title: e.meta.title as string,
     to: e.path,
   }))
