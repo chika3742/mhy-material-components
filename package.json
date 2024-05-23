@@ -1,6 +1,6 @@
 {
   "name": "@chika3742/mhy-material-components",
-  "version": "1.0.38",
+  "version": "1.0.39",
   "description": "Common components for genshin-material / hsr-material",
   "license": "MIT",
   "type": "module",
