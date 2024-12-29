@@ -11,5 +11,5 @@
     "@nuxtjs/i18n": "^8.3.1",
     "nuxt": "^3.11.2"
   },
-  "packageManager": "yarn@4.3.1"
+  "packageManager": "yarn@4.6.0"
 }
