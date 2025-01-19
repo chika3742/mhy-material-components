@@ -1,7 +1,7 @@
 # mhy-material-components
 
 > [!WARNING]
-> **This repo was moved to [chika3742/hsr-material][hsr-material-repo-url].**
+> **This repo was moved to [chika3742/hsr-material](https://github.com/chika3742/hsr-material/tree/main/packages/mhy-material-components).**
 
 Components common to [genshin-material][genshin-material-repo-url] and [hsr-material][hsr-material-repo-url]. **Not intended for external use.**
 
